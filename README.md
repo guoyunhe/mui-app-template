@@ -15,6 +15,8 @@ Create-React-App is based on webpack and babel, which get slower as project size
 
 Vite(esbuild) and Parcel 2 (swc) are much faster. Parcel still need a lot of hacks to work for a simple React app, while Vite is working out-of-box. So Vite becomes my best choice.
 
+### Programming language: TypeScript
+
 ### Framework: React 18
 
 Function components + hooks.
@@ -22,6 +24,10 @@ Function components + hooks.
 ### Style system: Emotion (CSS-in-JS)
 
 ### Component library: Chakra UI
+
+### Routing library: React Router
+
+### I18n library: I18next
 
 ### HTTP client: axios
 
