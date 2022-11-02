@@ -7,7 +7,7 @@ pnpm install
 pnpm start
 ```
 
-## Technology
+## Technology | 技术选型
 
 ### Build tool: Vite 3
 
@@ -35,6 +35,8 @@ Compared to native `fetch` function, axios has two main advantage:
 
 - support global default configuration, like headers, cors
 - automatically handle JSON request and response
+
+### Unit test framework: vitest
 
 ## Browser Compatibility
 
