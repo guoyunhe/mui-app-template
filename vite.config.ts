@@ -10,10 +10,12 @@ export default defineConfig({
     open: true,
   },
   plugins: [react()],
+  // https://vitest.dev/config/
   test: {
-    // https://vitest.dev/config/
     coverage: {
       reporter: ['text', 'json', 'html'],
     },
+    globals: true,
+    environment: 'jsdom',
   },
 });
