@@ -36,6 +36,10 @@ Compared to native `fetch` function, axios has two main advantage:
 - support global default configuration, like headers, cors
 - automatically handle JSON request and response
 
+### State management & caching: [swr](https://swr.vercel.app/)
+
+Compared to redux, swr is way more simple. Write less code. Get caching and auto refresh out-of-box.
+
 ### Unit test framework: vitest
 
 ## Browser Compatibility
