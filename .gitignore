@@ -30,3 +30,6 @@ yarn.lock
 
 # Unit tests
 coverage
+
+# Environments (dotenv) and configurations
+.env
