@@ -1,6 +1,5 @@
 import { RouteObject } from 'react-router-dom';
-import Dashboard from './dashboard';
-import dashboardRoutes from './dashboard/routes';
+import dashboard from './dashboard/routes';
 import Home from './home';
 import NotFound from './not-found';
 
@@ -10,11 +9,7 @@ const routes: RouteObject[] = [
     element: <Home />,
     errorElement: <NotFound />,
   },
-  {
-    path: '/dashboard',
-    element: <Dashboard />,
-    children: dashboardRoutes,
-  },
+  ...dashboard,
 ];
 
 export default routes;
