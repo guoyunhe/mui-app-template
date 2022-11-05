@@ -20,15 +20,16 @@ pnpm build
 
 ## Technology Stack
 
-- Build tool: [vite](https://vitejs.dev/)@3
-- Programming language: typescript
-- Framework: [react](https://reactjs.org/)@18
-- Component type: function components + hooks
-- Routing library: [react-router](https://reactrouter.com/)@6
-- Internationalization: [i18next-react](https://react.i18next.com/)
-- HTTP client: [axios](https://axios-http.com/)
-- State management & caching: [swr](https://swr.vercel.app/)
-- Unit test: [vitest](https://vitest.dev/) + [@testing-library/react](https://testing-library.com/)
+- [vite](https://vitejs.dev/) - the build system
+- [typescript](https://typescriptlang.org/) - the programming language
+- [react](https://reactjs.org/) - the user interface framework
+- [react-router](https://reactrouter.com/) - the routing library for single-page-application
+- [@chakra-ui/react](https://chakra-ui.com/) - the design system and component library
+- [i18next-react](https://react.i18next.com/) - the internationalization solution
+- [axios](https://axios-http.com/) - the http client to send API requests
+- [swr](https://swr.vercel.app/) - the state & caching system
+- [vitest](https://vitest.dev/) - the unit test runner
+- [@testing-library/react](https://testing-library.com/) - the unit test toolkit for react
 
 ## About The Template
 
