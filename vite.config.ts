@@ -1,6 +1,7 @@
 /// <reference types="vitest" />
 import react from '@vitejs/plugin-react';
 import { defineConfig } from 'vite';
+import tsconfigPaths from 'vite-tsconfig-paths'
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -9,7 +10,10 @@ export default defineConfig({
     port: 3000,
     open: true,
   },
-  plugins: [react()],
+  plugins: [
+    react(),
+    tsconfigPaths()
+  ],
   // https://vitest.dev/config/
   test: {
     coverage: {
