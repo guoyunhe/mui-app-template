@@ -36,3 +36,5 @@ pnpm build
 This app is generated from https://github.com/guoyunhe/react-app-template
 
 Issues and pull requests are always welcome.
+
+Looking for a back-end template? Checkout https://github.com/guoyunhe/adonis-api-template
