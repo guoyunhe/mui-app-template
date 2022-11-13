@@ -5,7 +5,6 @@ import useSWR from 'swr';
 
 export default function Login() {
   const { data: user, error, mutate } = useSWR('/user');
-  console.log(user, error);
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
@@ -40,7 +39,6 @@ export default function Login() {
           />
         </label>
       </p>
-      {error && <p style={{ color: 'red' }}>{error}</p>}
       <button
         onClick={() => {
           axios
