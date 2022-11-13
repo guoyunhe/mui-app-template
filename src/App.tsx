@@ -1,4 +1,4 @@
-import { ChakraProvider } from '@chakra-ui/react';
+import { CssBaseline } from '@mui/material';
 import axios from 'axios';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { SWRConfig } from 'swr';
@@ -11,9 +11,9 @@ export default function App() {
     <SWRConfig
       value={{ fetcher: (url) => axios.get(url).then((res) => res.data) }}
     >
-      <ChakraProvider>
+      <CssBaseline>
         <RouterProvider router={router} />
-      </ChakraProvider>
+      </CssBaseline>
     </SWRConfig>
   );
 }

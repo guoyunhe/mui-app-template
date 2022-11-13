@@ -1,4 +1,4 @@
-import { Box, Button, Center, Heading, HStack } from '@chakra-ui/react';
+import { Box, Button, Typography } from '@mui/material';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import LanguageSelect from '../i18n/LanguageSelect';
@@ -8,38 +8,46 @@ export default function Header() {
   const { t } = useTranslation();
   return (
     <Box
-      bgImage={bikeImage}
-      bgSize="cover"
-      bgPosition="center"
-      bgRepeat="no-repeat"
-      h="700px"
+      sx={{
+        backgroundImage: `url(${bikeImage})`,
+        bgSize: 'cover',
+        bgPosition: 'center',
+        bgRepeat: 'no-repeat',
+        h: '700px',
+      }}
     >
-      <HStack position="absolute" top={4} right={4} spacing={4}>
+      <Box sx={{ position: 'absolute', p: 4, display: 'flex', gap: 1 }}>
         <div>
           <LanguageSelect />
         </div>
         <div>
-          <Button as={Link} to="/login">
+          <Button component={Link} to="/login">
             {t('Login')}
           </Button>
         </div>
         <div>
-          <Button as={Link} to="/register">
+          <Button component={Link} to="/register">
             {t('Register')}
           </Button>
         </div>
-      </HStack>
-      <Center h="100%">
-        <Heading
-          color="white"
-          size="4xl"
+      </Box>
+      <Box
+        sx={{
+          height: '100%',
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+        }}
+      >
+        <Typography
+          component="h1"
           fontWeight="bold"
           fontStyle="italic"
           textTransform="uppercase"
         >
           {t('The Cool Bike App')}
-        </Heading>
-      </Center>
+        </Typography>
+      </Box>
     </Box>
   );
 }

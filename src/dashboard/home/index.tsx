@@ -1,9 +1,9 @@
-import { Box, Heading } from '@chakra-ui/react';
+import { Box, Typography } from '@mui/material';
 
 export default function Home() {
   return (
     <Box>
-      <Heading size="4xl">The Cool Bike Platform</Heading>
+      <Typography level="display1">The Cool Bike Platform</Typography>
     </Box>
   );
 }
