@@ -3,7 +3,7 @@ import i18next from 'i18next';
 import LanguageDetector from 'i18next-browser-languagedetector';
 import FetchBackend from 'i18next-fetch-backend';
 import { initReactI18next } from 'react-i18next';
-import locales from './locales.json';
+import locales from './config/i18n';
 
 axios.defaults.baseURL = import.meta.env.VITE_API_BASE_URL;
 axios.defaults.withCredentials = true; // CORS

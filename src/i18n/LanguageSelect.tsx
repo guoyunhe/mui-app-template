@@ -1,6 +1,6 @@
 import { MenuItem, Select } from '@mui/material';
 import { useTranslation } from 'react-i18next';
-import locales from '../locales.json';
+import { languages } from '../config/i18n';
 
 export default function LanguageSelect() {
   const { i18n } = useTranslation();
@@ -12,7 +12,7 @@ export default function LanguageSelect() {
         i18n.changeLanguage(e.target.value);
       }}
     >
-      {locales.map((item) => (
+      {languages.map((item) => (
         <MenuItem key={item.code} value={item.code}>
           {item.name}
         </MenuItem>
