@@ -1,7 +1,7 @@
 import { Box, Button, Typography } from '@mui/material';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
-import LanguageSelect from '../i18n/LanguageSelect';
+import LanguageMenu from '../components/LanguageMenu';
 import bikeImage from './bike.jpg';
 
 export default function Header() {
@@ -18,7 +18,7 @@ export default function Header() {
     >
       <Box sx={{ position: 'absolute', p: 4, display: 'flex', gap: 1 }}>
         <div>
-          <LanguageSelect />
+          <LanguageMenu />
         </div>
         <div>
           <Button component={Link} to="/login">

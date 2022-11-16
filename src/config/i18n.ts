@@ -12,3 +12,5 @@ export const languages = [
     name: '繁体中文',
   },
 ];
+
+export const languageCodes = languages.map((item) => item.code);

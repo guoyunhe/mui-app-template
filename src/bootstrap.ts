@@ -3,10 +3,9 @@ import i18next from 'i18next';
 import LanguageDetector from 'i18next-browser-languagedetector';
 import FetchBackend from 'i18next-fetch-backend';
 import { initReactI18next } from 'react-i18next';
-import locales from './config/i18n';
+import { languageCodes } from './config/i18n';
 
 axios.defaults.baseURL = import.meta.env.VITE_API_BASE_URL;
-axios.defaults.withCredentials = true; // CORS
 
 i18next
   .use(FetchBackend)
@@ -14,7 +13,7 @@ i18next
   .use(initReactI18next) // passes i18n down to react-i18next
   .init({
     fallbackLng: 'en',
-    supportedLngs: locales.map((item) => item.code),
+    supportedLngs: languageCodes,
     interpolation: {
       escapeValue: false, // react already safes from xss => https://www.i18next.com/translation-function/interpolation#unescape
     },
