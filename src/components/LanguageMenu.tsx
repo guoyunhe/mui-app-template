@@ -35,6 +35,15 @@ export default function LanguageMenu() {
         onClose={() => {
           setAnchorEl(null);
         }}
+        anchorOrigin={{
+          vertical: 'bottom',
+          horizontal: 'right',
+        }}
+        keepMounted
+        transformOrigin={{
+          vertical: 'top',
+          horizontal: 'right',
+        }}
         MenuListProps={{
           'aria-labelledby': 'lang-menu-button',
         }}

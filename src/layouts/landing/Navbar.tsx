@@ -16,6 +16,7 @@ import {
   Typography,
 } from '@mui/material';
 import { useState } from 'react';
+import LanguageMenu from '../../components/LanguageMenu';
 import SearchBox from './SearchBox';
 
 export default function Navbar() {
@@ -114,7 +115,7 @@ export default function Navbar() {
 
   return (
     <>
-      <AppBar position="static">
+      <AppBar position="static" color="inherit">
         <Toolbar>
           <IconButton
             edge="start"
@@ -137,6 +138,7 @@ export default function Navbar() {
 
           <Box sx={{ flexGrow: 1 }} />
           <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
+            <LanguageMenu />
             <IconButton aria-label="show 4 new mails" color="inherit">
               <Badge badgeContent={4} color="error">
                 <MailIcon />

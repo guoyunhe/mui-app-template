@@ -5,10 +5,7 @@ import { useTranslation } from 'react-i18next';
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
   borderRadius: theme.shape.borderRadius,
-  backgroundColor: alpha(theme.palette.common.white, 0.15),
-  '&:hover': {
-    backgroundColor: alpha(theme.palette.common.white, 0.25),
-  },
+  backgroundColor: alpha(theme.palette.common.black, 0.05),
   marginRight: theme.spacing(2),
   marginLeft: 0,
   width: '100%',
@@ -45,7 +42,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 export default function SearchBox() {
   const { t } = useTranslation();
   return (
-    <Search>
+    <Search tabIndex={2}>
       <SearchIconWrapper>
         <SearchIcon />
       </SearchIconWrapper>
