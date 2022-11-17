@@ -2,6 +2,7 @@ import { RouteObject } from 'react-router-dom';
 import { RequireAuth } from './auth/RequireAuth';
 import dashboard from './dashboard/routes';
 import Home from './home';
+import LandingLayout from './layouts/landing';
 import Login from './login';
 import NotFound from './not-found';
 import TodosPage from './todos';
@@ -9,8 +10,14 @@ import TodosPage from './todos';
 const routes: RouteObject[] = [
   {
     path: '/',
-    element: <Home />,
+    element: <LandingLayout />,
     errorElement: <NotFound />,
+    children: [
+      {
+        index: true,
+        element: <Home />,
+      },
+    ],
   },
   {
     path: '/login',
