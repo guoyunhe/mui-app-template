@@ -113,7 +113,7 @@ export default function Navbar() {
   );
 
   return (
-    <Box sx={{ flexGrow: 1 }}>
+    <>
       <AppBar position="static">
         <Toolbar>
           <IconButton
@@ -132,6 +132,7 @@ export default function Navbar() {
           >
             {import.meta.env.VITE_APP_NAME}
           </Typography>
+
           <SearchBox />
 
           <Box sx={{ flexGrow: 1 }} />
@@ -172,6 +173,6 @@ export default function Navbar() {
       </AppBar>
       {renderMobileMenu}
       {renderMenu}
-    </Box>
+    </>
   );
 }
