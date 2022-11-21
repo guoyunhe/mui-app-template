@@ -1,7 +1,7 @@
-import axios from 'axios';
 import { useState } from 'react';
 import { Navigate } from 'react-router-dom';
 import useSWR from 'swr';
+import api from '../api';
 
 export default function Login() {
   const { data: user, error, mutate } = useSWR('/user');
@@ -41,13 +41,16 @@ export default function Login() {
       </p>
       <button
         onClick={() => {
-          axios
+          api
             .post('/login', {
-              username,
-              password,
+              json: {
+                username,
+                password,
+              },
             })
-            .then((res) => {
-              mutate(res.data);
+            .json()
+            .then((data) => {
+              mutate(data);
             });
         }}
       >

@@ -26,7 +26,7 @@ pnpm build
 - [react-router](https://reactrouter.com/) - the routing library for single-page-application
 - [@mui/material](https://mui.com/) - the design system and component library
 - [i18next-react](https://react.i18next.com/) - the internationalization solution
-- [axios](https://axios-http.com/) - the http client to send API requests
+- [ky](https://npmjs.com/package/ky) - the http client to send API requests
 - [swr](https://swr.vercel.app/) - the state & caching system
 - [vitest](https://vitest.dev/) - the unit test runner
 - [@testing-library/react](https://testing-library.com/) - the unit test toolkit for react
