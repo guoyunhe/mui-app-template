@@ -9,6 +9,7 @@
     "preview": "vite preview",
     "i18next": "i18next",
     "lint": "eslint .",
+    "format": "prettier --write .",
     "test": "vitest --ui",
     "test:ci": "vitest run"
   },

@@ -8,12 +8,7 @@ export default {
   indentation: 2,
   keySeparator: false,
   namespaceSeparator: false,
-  defaultValue: (
-    locale: string,
-    namespace: string,
-    key: string,
-    value: string
-  ) => {
+  defaultValue: (locale: string, namespace: string, key: string) => {
     if (locale === 'en') {
       return key;
     } else {

@@ -1,10 +1,10 @@
-import i18next from 'i18next';
+import i18n from 'i18next';
 import LanguageDetector from 'i18next-browser-languagedetector';
 import FetchBackend from 'i18next-fetch-backend';
 import { initReactI18next } from 'react-i18next';
 import { languageCodes } from './config/i18n';
 
-i18next
+i18n
   .use(FetchBackend)
   .use(LanguageDetector)
   .use(initReactI18next) // passes i18n down to react-i18next
