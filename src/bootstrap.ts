@@ -1,3 +1,4 @@
+import fetchAdapter from '@vespaiach/axios-fetch-adapter';
 import axios from 'axios';
 import i18next from 'i18next';
 import LanguageDetector from 'i18next-browser-languagedetector';
@@ -6,6 +7,7 @@ import { initReactI18next } from 'react-i18next';
 import { languageCodes } from './config/i18n';
 
 axios.defaults.baseURL = import.meta.env.VITE_API_BASE_URL;
+axios.defaults.adapter = fetchAdapter;
 
 i18next
   .use(FetchBackend)
