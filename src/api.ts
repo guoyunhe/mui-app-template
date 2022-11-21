@@ -28,4 +28,8 @@ const api = ky.create({
   },
 });
 
+export function apiSWRFetcher(url: string) {
+  return api.get(url).json();
+}
+
 export default api;
