@@ -46,10 +46,7 @@ export default function SearchBox() {
       <SearchIconWrapper>
         <SearchIcon />
       </SearchIconWrapper>
-      <StyledInputBase
-        placeholder={t('Search') || ''}
-        inputProps={{ 'aria-label': 'search' }}
-      />
+      <StyledInputBase placeholder={t('Search') || ''} inputProps={{ 'aria-label': 'search' }} />
     </Search>
   );
 }

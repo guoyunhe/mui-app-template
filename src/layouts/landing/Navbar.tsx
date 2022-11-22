@@ -5,24 +5,14 @@ import {
   MoreVert as MoreIcon,
   Notifications as NotificationsIcon,
 } from '@mui/icons-material';
-import {
-  AppBar,
-  Badge,
-  Box,
-  IconButton,
-  Menu,
-  MenuItem,
-  Toolbar,
-  Typography,
-} from '@mui/material';
+import { AppBar, Badge, Box, IconButton, Menu, MenuItem, Toolbar, Typography } from '@mui/material';
 import { useState } from 'react';
 import LanguageMenu from '../../components/LanguageMenu';
 import SearchBox from './SearchBox';
 
 export default function Navbar() {
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
-  const [mobileMoreAnchorEl, setMobileMoreAnchorEl] =
-    useState<null | HTMLElement>(null);
+  const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = useState<null | HTMLElement>(null);
 
   const isMenuOpen = Boolean(anchorEl);
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
@@ -117,20 +107,10 @@ export default function Navbar() {
     <>
       <AppBar position="static" color="inherit">
         <Toolbar>
-          <IconButton
-            edge="start"
-            color="inherit"
-            aria-label="open drawer"
-            sx={{ mr: 2 }}
-          >
+          <IconButton edge="start" color="inherit" aria-label="open drawer" sx={{ mr: 2 }}>
             <MenuIcon />
           </IconButton>
-          <Typography
-            variant="h6"
-            noWrap
-            component="div"
-            sx={{ display: { xs: 'none', sm: 'block' } }}
-          >
+          <Typography variant="h6" noWrap component="div" sx={{ display: { xs: 'none', sm: 'block' } }}>
             {import.meta.env.VITE_APP_NAME}
           </Typography>
 

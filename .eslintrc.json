@@ -23,12 +23,5 @@
     },
     "import/extensions": [".js", ".jsx", ".ts", ".tsx"]
   },
-  "ignorePatterns": [
-    "build",
-    "coverage",
-    "dist",
-    "lib",
-    "node_modules",
-    ".rive"
-  ]
+  "ignorePatterns": ["coverage", "dist", "node_modules"]
 }

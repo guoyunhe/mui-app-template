@@ -39,12 +39,7 @@ export default function Header() {
           alignItems: 'center',
         }}
       >
-        <Typography
-          component="h1"
-          fontWeight="bold"
-          fontStyle="italic"
-          textTransform="uppercase"
-        >
+        <Typography component="h1" fontWeight="bold" fontStyle="italic" textTransform="uppercase">
           {t('The Cool Bike App')}
         </Typography>
       </Box>
