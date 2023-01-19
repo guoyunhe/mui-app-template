@@ -2,7 +2,7 @@ import { Language } from '@mui/icons-material';
 import { Button, Menu, MenuItem } from '@mui/material';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { languages } from '../config/i18n';
+import { languages } from '../../config/i18n';
 
 export default function LanguageMenu() {
   const { i18n } = useTranslation();

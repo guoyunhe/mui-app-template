@@ -1,8 +1,9 @@
+import axios from 'axios';
 import i18n from 'i18next';
 import LanguageDetector from 'i18next-browser-languagedetector';
 import FetchBackend from 'i18next-fetch-backend';
 import { initReactI18next } from 'react-i18next';
-import { languageCodes } from './config/i18n';
+import { languageCodes } from '../config/i18n';
 
 i18n
   .use(FetchBackend)
@@ -17,7 +18,16 @@ i18n
     backend: { loadPath: '/locales/{{lng}}/{{ns}}.json' },
     detection: {
       // order and from where user language should be detected
-      order: ['querystring', 'cookie', 'localStorage', 'sessionStorage', 'navigator', 'htmlTag', 'path', 'subdomain'],
+      order: [
+        'querystring',
+        'cookie',
+        'localStorage',
+        'sessionStorage',
+        'navigator',
+        'htmlTag',
+        'path',
+        'subdomain',
+      ],
 
       // keys or params to lookup language from
       lookupQuerystring: 'locale',
@@ -30,3 +40,5 @@ i18n
       caches: ['localStorage', 'cookie'],
     },
   });
+
+axios.defaults.baseURL = import.meta.env.VITE_API_BASE_URL;
