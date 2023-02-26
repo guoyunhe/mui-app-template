@@ -24,12 +24,12 @@ pnpm build
 - [typescript](https://typescriptlang.org/) - the programming language
 - [react](https://reactjs.org/) - the user interface framework
 - [react-router](https://reactrouter.com/) - the routing library for single-page-application
-- [@mui/material](https://mui.com/) - the design system and component library
-- [i18next-react](https://react.i18next.com/) - the internationalization solution
-- [ky](https://npmjs.com/package/ky) - the http client to send API requests
+- [antd](https://ant.design/) - the design system and component library
+- [i18next](https://react.i18next.com/) - the internationalization solution
+- [axios](https://axios-http.com/) - the http client to send API requests
 - [swr](https://swr.vercel.app/) - the state & caching system
 - [vitest](https://vitest.dev/) - the unit test runner
-- [@testing-library/react](https://testing-library.com/) - the unit test toolkit for react
+- [testing-library](https://testing-library.com/) - the unit test toolkit for react
 
 ## About The Template
 
