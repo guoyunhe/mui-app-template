@@ -4,7 +4,7 @@ import {
   Menu as MenuIcon,
   MoreVert as MoreIcon,
   Notifications as NotificationsIcon,
-} from '@mui/icons-material';
+} from '@ant-design/icons';
 import { AppBar, Badge, Box, IconButton, Menu, MenuItem, Toolbar, Typography } from '@mui/material';
 import { useState } from 'react';
 import LanguageMenu from '../../components/LanguageMenu';
@@ -110,7 +110,12 @@ export default function Navbar() {
           <IconButton edge="start" color="inherit" aria-label="open drawer" sx={{ mr: 2 }}>
             <MenuIcon />
           </IconButton>
-          <Typography variant="h6" noWrap component="div" sx={{ display: { xs: 'none', sm: 'block' } }}>
+          <Typography
+            variant="h6"
+            noWrap
+            component="div"
+            sx={{ display: { xs: 'none', sm: 'block' } }}
+          >
             {import.meta.env.VITE_APP_NAME}
           </Typography>
 
