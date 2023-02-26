@@ -13,7 +13,7 @@
     "test:ci": "vitest run"
   },
   "dependencies": {
-    "@guoyunhe/react-auth": "^1.0.0",
+    "@guoyunhe/react-auth": "^1.0.1",
     "antd": "^5.2.2",
     "axios": "^1.2.3",
     "i18next": "^22.4.9",
