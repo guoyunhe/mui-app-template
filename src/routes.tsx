@@ -1,5 +1,5 @@
+import { RequireAuth } from '@guoyunhe/react-auth';
 import { RouteObject } from 'react-router-dom';
-import { RequireAuth } from './auth/RequireAuth';
 import dashboard from './dashboard/routes';
 import Home from './home';
 import LandingLayout from './layouts/landing';
