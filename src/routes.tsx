@@ -1,11 +1,12 @@
 import { RequireAuth } from '@guoyunhe/react-auth';
 import { RouteObject } from 'react-router-dom';
-import dashboard from './dashboard/routes';
-import Home from './home';
+import AdminLayout from './layouts/admin';
+import AppLayout from './layouts/app';
+import AuthLayout from './layouts/auth';
 import LandingLayout from './layouts/landing';
-import Login from './login';
 import NotFound from './not-found';
-import TodosPage from './todos';
+import Login from './pages/auth/login';
+import Home from './pages/landing/home';
 
 const routes: RouteObject[] = [
   {
@@ -20,18 +21,32 @@ const routes: RouteObject[] = [
     ],
   },
   {
-    path: '/login',
-    element: <Login />,
+    path: 'auth',
+    element: <AuthLayout />,
+    errorElement: <NotFound />,
+    children: [
+      {
+        path: 'login',
+        element: <Login />,
+      },
+    ],
   },
   {
-    path: 'todos',
+    path: 'app',
     element: (
       <RequireAuth>
-        <TodosPage />
+        <AppLayout />
       </RequireAuth>
     ),
   },
-  ...dashboard,
+  {
+    path: 'admin',
+    element: (
+      <RequireAuth>
+        <AdminLayout />
+      </RequireAuth>
+    ),
+  },
 ];
 
 export default routes;
