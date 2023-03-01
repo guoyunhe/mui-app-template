@@ -2,7 +2,8 @@ import { translate } from 'bing-translate-api';
 import glob from 'fast-glob';
 import { readFile, writeFile } from 'fs/promises';
 import { join } from 'path';
-import { languageCodes } from '../config/i18n.js';
+
+import { languageCodes } from 'config/i18n.js';
 
 const localeRoot = 'public/locales';
 const sourceDir = localeRoot + '/en';
