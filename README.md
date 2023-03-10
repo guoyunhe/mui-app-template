@@ -1,21 +1,21 @@
-# React App
+# MUI App
 
 ## Get Started
 
 ### Local Development
 
-```
+```bash
 cp .env.example .env
-pnpm install
-pnpm start
+npm install
+npm start
 ```
 
 ### Production Deployment
 
-```
-cp .env.example .env
-pnpm install
-pnpm build
+```bash
+cp .env.example .env # Skip this step when deploy on Netlify etc.
+npm install
+npm run build
 ```
 
 ## Technology Stack
@@ -24,7 +24,7 @@ pnpm build
 - [typescript](https://typescriptlang.org/) - the programming language
 - [react](https://reactjs.org/) - the user interface framework
 - [react-router](https://reactrouter.com/) - the routing library for single-page-application
-- [antd](https://ant.design/) - the design system and component library
+- [mui](https://mui.com/) - the design system and component library
 - [i18next](https://react.i18next.com/) - the internationalization solution
 - [axios](https://axios-http.com/) - the http client to send API requests
 - [swr](https://swr.vercel.app/) - the state & caching system
@@ -33,8 +33,15 @@ pnpm build
 
 ## About The Template
 
-This app is generated from https://github.com/guoyunhe/react-app-template
+This app is generated from https://github.com/guoyunhe/mui-app-template
 
 Issues and pull requests are always welcome.
 
-Looking for a back-end template? Checkout https://github.com/guoyunhe/adonis-api-template
+Other front-end templates:
+
+- https://github.com/guoyunhe/antd-app-template
+- https://github.com/guoyunhe/antd-mobile-app-template
+
+And back-end templates:
+
+- https://github.com/guoyunhe/adonis-api-template
