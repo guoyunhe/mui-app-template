@@ -24,7 +24,7 @@ export default function Navbar() {
           </Button>
         </Stack>
         <Box flex="1 1 auto" />
-        <Stack direction="row" spacing={2} ml={3}>
+        <Stack direction="row" spacing={2}>
           <Button variant="text" color="inherit" component={Link} to="/login">
             {t('Login')}
           </Button>
