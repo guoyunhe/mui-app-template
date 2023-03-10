@@ -21,7 +21,7 @@ const routes: RouteObject[] = [
     ],
   },
   {
-    path: 'auth',
+    path: '/',
     element: <AuthLayout />,
     errorElement: <NotFound />,
     children: [
