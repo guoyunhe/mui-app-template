@@ -19,8 +19,17 @@ export default function Navbar() {
           <Button variant="text" color="inherit" component={Link} to="/pricing">
             {t('Pricing')}
           </Button>
-          <Button variant="text" color="inherit" component={Link} to="/about">
-            {t('About')}
+          <Button variant="text" color="inherit" component={Link} to="/support">
+            {t('Support')}
+          </Button>
+        </Stack>
+        <Box flex="1 1 auto" />
+        <Stack direction="row" spacing={2} ml={3}>
+          <Button variant="text" color="inherit" component={Link} to="/login">
+            {t('Login')}
+          </Button>
+          <Button variant="text" color="inherit" component={Link} to="/register">
+            {t('Register')}
           </Button>
         </Stack>
       </Toolbar>
