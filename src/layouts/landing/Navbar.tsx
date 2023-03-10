@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 export default function Navbar() {
   const { t } = useTranslation();
   return (
-    <AppBar position="sticky" color="inherit">
+    <AppBar position="static" color="transparent" elevation={0}>
       <Toolbar>
         <Link to="/" style={{ display: 'flex', color: 'inherit', textDecoration: 'none' }}>
           <Box component="img" src="/logo.svg" sx={{ mr: 1 }} />
