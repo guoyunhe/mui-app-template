@@ -27,7 +27,7 @@ export default function Login() {
             setPassword(e.target.value);
           }}
         />
-        <Button variant="contained" onClick={() => {}}>
+        <Button variant="contained" size="large" onClick={() => {}}>
           {t('Login')}
         </Button>
       </Stack>
