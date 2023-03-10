@@ -15,6 +15,44 @@ export default function Home() {
       >
         <Typography variant="h2">{t('Something Impressive')}</Typography>
       </Box>
+      <Box
+        component="section"
+        height={400}
+        display="flex"
+        justifyContent="center"
+        alignItems="center"
+      >
+        <Typography variant="h4">{t('Content Block')}</Typography>
+      </Box>
+      <Box
+        component="section"
+        height={400}
+        bgcolor={colors.blueGrey[200]}
+        display="flex"
+        justifyContent="center"
+        alignItems="center"
+      >
+        <Typography variant="h4">{t('Content Block')}</Typography>
+      </Box>
+      <Box
+        component="section"
+        height={400}
+        display="flex"
+        justifyContent="center"
+        alignItems="center"
+      >
+        <Typography variant="h4">{t('Content Block')}</Typography>
+      </Box>
+      <Box
+        component="section"
+        height={400}
+        bgcolor={colors.blueGrey[200]}
+        display="flex"
+        justifyContent="center"
+        alignItems="center"
+      >
+        <Typography variant="h4">{t('Content Block')}</Typography>
+      </Box>
     </Box>
   );
 }
