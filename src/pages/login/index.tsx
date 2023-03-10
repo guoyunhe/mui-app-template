@@ -1,53 +1,36 @@
+import { Button, Paper, Stack, TextField, Typography } from '@mui/material';
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 export default function Login() {
-  const [username, setUsername] = useState('');
+  const { t } = useTranslation();
+  const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
   return (
-    <div style={{ padding: 15 }}>
-      <h1>Login</h1>
-      <p>
-        <label>
-          <div>Username:</div>
-          <input
-            type="text"
-            value={username}
-            onChange={(e) => {
-              setUsername(e.target.value);
-            }}
-          />
-        </label>
-      </p>
-      <p>
-        <label>
-          <div>Password:</div>
-          <input
-            type="password"
-            value={password}
-            onChange={(e) => {
-              setPassword(e.target.value);
-            }}
-          />
-        </label>
-      </p>
-      <button
-        onClick={() => {
-          api
-            .post('/login', {
-              json: {
-                username,
-                password,
-              },
-            })
-            .json()
-            .then((data) => {
-              mutate(data);
-            });
-        }}
-      >
-        Login
-      </button>
-    </div>
+    <Paper sx={{ borderRadius: 5, p: 5 }}>
+      <Typography variant="h4">{t('Login')}</Typography>
+      <Stack spacing={3} mt={3}>
+        <TextField
+          label={t('Email')}
+          type="email"
+          value={email}
+          onChange={(e) => {
+            setEmail(e.target.value);
+          }}
+        />
+        <TextField
+          label={t('Password')}
+          type="password"
+          value={password}
+          onChange={(e) => {
+            setPassword(e.target.value);
+          }}
+        />
+        <Button variant="contained" onClick={() => {}}>
+          {t('Login')}
+        </Button>
+      </Stack>
+    </Paper>
   );
 }

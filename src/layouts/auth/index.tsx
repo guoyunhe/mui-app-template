@@ -12,7 +12,7 @@ export default function AuthLayout() {
         flex="1 1 auto"
         display="flex"
         justifyContent="center"
-        alignContent="center"
+        alignItems="center"
         bgcolor={colors.blueGrey[200]}
       >
         <Outlet />
