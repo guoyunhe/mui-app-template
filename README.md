@@ -27,7 +27,6 @@ npm run build
 - [mui](https://mui.com/) - the design system and component library
 - [i18next](https://react.i18next.com/) - the internationalization solution
 - [axios](https://axios-http.com/) - the http client to send API requests
-- [swr](https://swr.vercel.app/) - the state & caching system
 - [vitest](https://vitest.dev/) - the unit test runner
 - [testing-library](https://testing-library.com/) - the unit test toolkit for react
 

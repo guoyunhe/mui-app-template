@@ -4,8 +4,8 @@ import AdminLayout from './layouts/admin';
 import AppLayout from './layouts/app';
 import AuthLayout from './layouts/auth';
 import LandingLayout from './layouts/landing';
-import NotFound from './not-found';
 import Login from './pages/auth/login';
+import NotFound from './pages/error/not-found';
 import Home from './pages/landing/home';
 
 const routes: RouteObject[] = [

@@ -1,15 +1,8 @@
 import { useState } from 'react';
-import { Navigate } from 'react-router-dom';
-import useSWR from 'swr';
 
 export default function Login() {
-  const { data: user, error, mutate } = useSWR('/user');
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-
-  if (user) {
-    return <Navigate to="/" />;
-  }
 
   return (
     <div style={{ padding: 15 }}>
