@@ -4,7 +4,7 @@ import { Paper, Stack, TextField, Typography } from '@mui/material';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
-export default function LoginPage() {
+export default function RegisterPage() {
   const { t } = useTranslation();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -12,7 +12,7 @@ export default function LoginPage() {
 
   return (
     <Paper sx={{ borderRadius: 5, p: 5 }}>
-      <Typography variant="h4">{t('Login')}</Typography>
+      <Typography variant="h4">{t('Register')}</Typography>
       <Stack spacing={3} mt={3}>
         <TextField
           label={t('Email')}
@@ -36,7 +36,7 @@ export default function LoginPage() {
           loading={login.loading}
           onClick={login.submit}
         >
-          {t('Login')}
+          {t('Register')}
         </LoadingButton>
       </Stack>
     </Paper>

@@ -6,7 +6,8 @@ import AuthLayout from './layouts/auth';
 import LandingLayout from './layouts/landing';
 import NotFound from './pages/error/not-found';
 import Home from './pages/home';
-import Login from './pages/login';
+import LoginPage from './pages/login';
+import RegisterPage from './pages/register';
 
 const routes: RouteObject[] = [
   {
@@ -23,11 +24,14 @@ const routes: RouteObject[] = [
   {
     path: '/',
     element: <AuthLayout />,
-    errorElement: <NotFound />,
     children: [
       {
         path: 'login',
-        element: <Login />,
+        element: <LoginPage />,
+      },
+      {
+        path: 'register',
+        element: <RegisterPage />,
       },
     ],
   },
