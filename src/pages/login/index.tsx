@@ -1,4 +1,4 @@
-import { useLogin } from '@guoyunhe/react-auth';
+import { RedirectAfterAuth, useLogin } from '@guoyunhe/react-auth';
 import { LoadingButton } from '@mui/lab';
 import { Alert, Paper, Stack, TextField, Typography } from '@mui/material';
 import { useState } from 'react';
@@ -12,6 +12,7 @@ export default function LoginPage() {
 
   return (
     <Paper sx={{ borderRadius: 5, p: 5 }}>
+      <RedirectAfterAuth />
       <Typography variant="h4">{t('Login')}</Typography>
       <Stack spacing={3} mt={3}>
         {typeof login.errors === 'string' && <Alert severity="error">{login.errors}</Alert>}

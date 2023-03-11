@@ -1,19 +1,41 @@
-import { useLogin } from '@guoyunhe/react-auth';
+import { RedirectAfterAuth, useRegister } from '@guoyunhe/react-auth';
 import { LoadingButton } from '@mui/lab';
 import { Paper, Stack, TextField, Typography } from '@mui/material';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
+function getFieldError(errors: any, field: string) {
+  return errors?.find((err: any) => err.field === field)?.message;
+}
+
 export default function RegisterPage() {
   const { t } = useTranslation();
+  const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const login = useLogin({ email, password });
+  const [passwordConfirm, setPasswordConfirm] = useState('');
+  const { submit, loading, errors } = useRegister({ email, password });
+
+  const nameError = getFieldError(errors, 'name');
+  const emailError = getFieldError(errors, 'email');
+  const passwordError = getFieldError(errors, 'password');
+  const passwordConfirmError = getFieldError(errors, 'passwordConfirm');
 
   return (
     <Paper sx={{ borderRadius: 5, p: 5 }}>
+      <RedirectAfterAuth />
       <Typography variant="h4">{t('Register')}</Typography>
       <Stack spacing={3} mt={3}>
+        <TextField
+          label={t('Name')}
+          type="text"
+          value={name}
+          onChange={(e) => {
+            setName(e.target.value);
+          }}
+          error={!!nameError}
+          helperText={nameError}
+        />
         <TextField
           label={t('Email')}
           type="email"
@@ -21,6 +43,8 @@ export default function RegisterPage() {
           onChange={(e) => {
             setEmail(e.target.value);
           }}
+          error={!!emailError}
+          helperText={emailError}
         />
         <TextField
           label={t('Password')}
@@ -29,13 +53,20 @@ export default function RegisterPage() {
           onChange={(e) => {
             setPassword(e.target.value);
           }}
+          error={!!passwordError}
+          helperText={passwordError}
         />
-        <LoadingButton
-          variant="contained"
-          size="large"
-          loading={login.loading}
-          onClick={login.submit}
-        >
+        <TextField
+          label={t('Confirm password')}
+          type="password"
+          value={passwordConfirm}
+          onChange={(e) => {
+            setPasswordConfirm(e.target.value);
+          }}
+          error={!!passwordConfirmError}
+          helperText={passwordConfirmError}
+        />
+        <LoadingButton variant="contained" size="large" loading={loading} onClick={submit}>
           {t('Register')}
         </LoadingButton>
       </Stack>
