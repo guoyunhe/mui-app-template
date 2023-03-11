@@ -8,14 +8,14 @@ export default function LoginPage() {
   const { t } = useTranslation();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const login = useLogin({ email, password });
+  const { submit, loading, errors } = useLogin({ email, password });
 
   return (
     <Paper sx={{ borderRadius: 5, p: 5 }}>
       <RedirectAfterAuth />
       <Typography variant="h4">{t('Login')}</Typography>
       <Stack spacing={3} mt={3}>
-        {typeof login.errors === 'string' && <Alert severity="error">{login.errors}</Alert>}
+        {typeof errors === 'string' && <Alert severity="error">{errors}</Alert>}
         <TextField
           label={t('Email')}
           type="email"
@@ -32,12 +32,7 @@ export default function LoginPage() {
             setPassword(e.target.value);
           }}
         />
-        <LoadingButton
-          variant="contained"
-          size="large"
-          loading={login.loading}
-          onClick={login.submit}
-        >
+        <LoadingButton variant="contained" size="large" loading={loading} onClick={submit}>
           {t('Login')}
         </LoadingButton>
       </Stack>

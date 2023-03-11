@@ -1,6 +1,6 @@
 import { RedirectAfterAuth, useRegister } from '@guoyunhe/react-auth';
 import { LoadingButton } from '@mui/lab';
-import { Paper, Stack, TextField, Typography } from '@mui/material';
+import { Alert, Paper, Stack, TextField, Typography } from '@mui/material';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
@@ -26,6 +26,7 @@ export default function RegisterPage() {
       <RedirectAfterAuth />
       <Typography variant="h4">{t('Register')}</Typography>
       <Stack spacing={3} mt={3}>
+        {typeof errors === 'string' && <Alert severity="error">{errors}</Alert>}
         <TextField
           label={t('Name')}
           type="text"
