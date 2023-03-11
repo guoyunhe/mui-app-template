@@ -1,4 +1,6 @@
-import { Button, Paper, Stack, TextField, Typography } from '@mui/material';
+import { useLogin } from '@guoyunhe/react-auth';
+import { LoadingButton } from '@mui/lab';
+import { Paper, Stack, TextField, Typography } from '@mui/material';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
@@ -6,6 +8,7 @@ export default function Login() {
   const { t } = useTranslation();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const login = useLogin({ email, password });
 
   return (
     <Paper sx={{ borderRadius: 5, p: 5 }}>
@@ -27,9 +30,14 @@ export default function Login() {
             setPassword(e.target.value);
           }}
         />
-        <Button variant="contained" size="large" onClick={() => {}}>
+        <LoadingButton
+          variant="contained"
+          size="large"
+          loading={login.loading}
+          onClick={login.submit}
+        >
           {t('Login')}
-        </Button>
+        </LoadingButton>
       </Stack>
     </Paper>
   );
