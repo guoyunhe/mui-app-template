@@ -1,6 +1,6 @@
 import { useLogin } from '@guoyunhe/react-auth';
 import { LoadingButton } from '@mui/lab';
-import { Paper, Stack, TextField, Typography } from '@mui/material';
+import { Alert, Paper, Stack, TextField, Typography } from '@mui/material';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
@@ -14,6 +14,7 @@ export default function LoginPage() {
     <Paper sx={{ borderRadius: 5, p: 5 }}>
       <Typography variant="h4">{t('Login')}</Typography>
       <Stack spacing={3} mt={3}>
+        {typeof login.errors === 'string' && <Alert severity="error">{login.errors}</Alert>}
         <TextField
           label={t('Email')}
           type="email"
