@@ -8,7 +8,7 @@ export default function LandingLayout() {
   return (
     <Box minHeight="100vh" display="flex" flexDirection="column">
       <Navbar />
-      <Box flex="1 1 auto" display="flex" justifyContent="center" alignItems="center">
+      <Box flex="1 1 auto">
         <Outlet />
       </Box>
       <Footer />
