@@ -32,7 +32,7 @@ export default function LoginPage() {
             setPassword(e.target.value);
           }}
         />
-        <LoadingButton variant="contained" size="large" loading={loading} onClick={submit}>
+        <LoadingButton variant="contained" loading={loading} onClick={submit}>
           {t('Login')}
         </LoadingButton>
       </Stack>

@@ -67,7 +67,7 @@ export default function RegisterPage() {
           error={!!passwordConfirmError}
           helperText={passwordConfirmError}
         />
-        <LoadingButton variant="contained" size="large" loading={loading} onClick={submit}>
+        <LoadingButton variant="contained" loading={loading} onClick={submit}>
           {t('Register')}
         </LoadingButton>
       </Stack>
