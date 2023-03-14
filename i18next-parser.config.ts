@@ -9,6 +9,6 @@ export default {
   keySeparator: false,
   namespaceSeparator: false,
   defaultValue: (locale: string, namespace: string, key: string) => {
-    return key;
+    return locale === 'en' ? key : '';
   },
 };

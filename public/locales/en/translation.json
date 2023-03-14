@@ -1,6 +1,16 @@
 {
+  "Terms": "Terms",
+  "Privacy": "Privacy",
+  "About": "About",
+  "Features": "Features",
+  "Pricing": "Pricing",
+  "Support": "Support",
   "Login": "Login",
   "Register": "Register",
-  "The Cool Bike App": "",
-  "Search": "Search"
+  "Something Impressive": "Something Impressive",
+  "Content Block": "Content Block",
+  "Email": "Email",
+  "Password": "Password",
+  "Name": "Name",
+  "Confirm password": "Confirm password"
 }
