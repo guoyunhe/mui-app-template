@@ -1,6 +1,7 @@
 import { AppBar, Box, Button, Stack, Toolbar, Typography } from '@mui/material';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
+import LanguageMenu from 'src/components/language-menu';
 export default function Navbar() {
   const { t } = useTranslation();
   return (
@@ -25,6 +26,7 @@ export default function Navbar() {
         </Stack>
         <Box flex="1 1 auto" />
         <Stack direction="row" spacing={2}>
+          <LanguageMenu />
           <Button variant="text" color="inherit" component={Link} to="/login">
             {t('Login')}
           </Button>
