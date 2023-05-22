@@ -5,7 +5,7 @@ import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
 function getFieldError(errors: any, field: string) {
-  return errors?.find((err: any) => err.field === field)?.message;
+  return errors?.errors?.find((err: any) => err.field === field)?.message;
 }
 
 export default function RegisterPage() {
@@ -14,7 +14,7 @@ export default function RegisterPage() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [passwordConfirm, setPasswordConfirm] = useState('');
-  const { submit, loading, errors } = useRegister({ email, password });
+  const { submit, loading, errors } = useRegister({ name, email, password, passwordConfirm });
 
   const nameError = getFieldError(errors, 'name');
   const emailError = getFieldError(errors, 'email');
