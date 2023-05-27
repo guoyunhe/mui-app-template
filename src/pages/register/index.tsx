@@ -35,6 +35,7 @@ export default function RegisterPage() {
         <TextField
           label={t('Name')}
           type="text"
+          name="name"
           value={name}
           onChange={(e) => {
             setName(e.target.value);
@@ -45,6 +46,7 @@ export default function RegisterPage() {
         <TextField
           label={t('Username')}
           type="text"
+          name="username"
           value={username}
           onChange={(e) => {
             setUsername(e.target.value?.replace(/[^A-Za-z0-9_]/g, ''));
@@ -55,6 +57,7 @@ export default function RegisterPage() {
         <TextField
           label={t('Email')}
           type="email"
+          name="email"
           value={email}
           onChange={(e) => {
             setEmail(e.target.value);
@@ -65,6 +68,7 @@ export default function RegisterPage() {
         <TextField
           label={t('Password')}
           type="password"
+          name="password"
           value={password}
           onChange={(e) => {
             setPassword(e.target.value);
@@ -75,6 +79,7 @@ export default function RegisterPage() {
         <TextField
           label={t('Confirm password')}
           type="password"
+          name="passwordConfirm"
           value={passwordConfirm}
           onChange={(e) => {
             setPasswordConfirm(e.target.value);

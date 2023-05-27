@@ -19,6 +19,7 @@ export default function LoginPage() {
         <TextField
           label={t('Email')}
           type="email"
+          name="email"
           value={email}
           onChange={(e) => {
             setEmail(e.target.value);
@@ -27,6 +28,7 @@ export default function LoginPage() {
         <TextField
           label={t('Password')}
           type="password"
+          name="password"
           value={password}
           onChange={(e) => {
             setPassword(e.target.value);
