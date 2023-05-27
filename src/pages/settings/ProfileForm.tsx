@@ -1,0 +1,87 @@
+import { useAuth } from '@guoyunhe/react-auth';
+import { Save as SaveIcon } from '@mui/icons-material';
+import { LoadingButton } from '@mui/lab';
+import { Alert, Box, TextField } from '@mui/material';
+import axios from 'axios';
+import { useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
+import User from 'src/types/models/User';
+import getFieldError from 'src/utils/getFieldError';
+
+export default function ProfileForm() {
+  const { user, setUser } = useAuth<User>();
+  const { t } = useTranslation();
+
+  const [name, setName] = useState('');
+  const [username, setUsername] = useState('');
+  const [email, setEmail] = useState('');
+  const [loading, setLoading] = useState(false);
+  const [errors, setErrors] = useState<any>(null);
+
+  const nameError = getFieldError(errors, 'name');
+  const usernameError = getFieldError(errors, 'username');
+  const emailError = getFieldError(errors, 'email');
+
+  const submit = () => {
+    setLoading(true);
+    axios
+      .patch('/user', { name, username, email })
+      .then((res) => {
+        setUser(res.data);
+      })
+      .catch((err) => {
+        setErrors(err?.response?.data);
+      })
+      .finally(() => {
+        setLoading(false);
+      });
+  };
+
+  useEffect(() => {
+    setName(user?.name || '');
+    setEmail(user?.email || '');
+    setUsername(user?.username || '');
+  }, [user]);
+
+  return (
+    <Box sx={{ ml: 2 }}>
+      {typeof errors === 'string' && <Alert severity="error">{errors}</Alert>}
+      <TextField
+        label={t('Name')}
+        type="text"
+        value={name}
+        onChange={(e) => {
+          setName(e.target.value);
+        }}
+        error={!!nameError}
+        helperText={nameError}
+        sx={{ mb: 2 }}
+      />
+      <TextField
+        label={t('Username')}
+        type="text"
+        value={username}
+        onChange={(e) => {
+          setUsername(e.target.value?.replace(/[^A-Za-z0-9_]/g, ''));
+        }}
+        error={!!usernameError}
+        helperText={usernameError}
+        sx={{ mb: 2 }}
+      />
+      <TextField
+        label={t('Email')}
+        type="email"
+        value={email}
+        onChange={(e) => {
+          setEmail(e.target.value);
+        }}
+        error={!!emailError}
+        helperText={emailError}
+        sx={{ mb: 2 }}
+      />
+      <LoadingButton variant="outlined" loading={loading} onClick={submit} startIcon={<SaveIcon />}>
+        {t('Save')}
+      </LoadingButton>
+    </Box>
+  );
+}

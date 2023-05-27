@@ -3,10 +3,7 @@ import { LoadingButton } from '@mui/lab';
 import { Alert, Paper, Stack, TextField, Typography } from '@mui/material';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-
-function getFieldError(errors: any, field: string) {
-  return errors?.errors?.find((err: any) => err.field === field)?.message;
-}
+import getFieldError from 'src/utils/getFieldError';
 
 export default function RegisterPage() {
   const { t } = useTranslation();

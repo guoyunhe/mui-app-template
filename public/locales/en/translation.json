@@ -1,4 +1,7 @@
 {
+  "Dashboard": "Dashboard",
+  "Settings": "Settings",
+  "Logout": "Logout",
   "Terms": "Terms",
   "Privacy": "Privacy",
   "About": "About",
@@ -13,5 +16,8 @@
   "Password": "Password",
   "Name": "Name",
   "Username": "Username",
-  "Confirm password": "Confirm password"
+  "Confirm password": "Confirm password",
+  "Upload": "Upload",
+  "Profile": "Profile",
+  "Save": "Save"
 }

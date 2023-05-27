@@ -1,4 +1,7 @@
 {
+  "Dashboard": "控制台",
+  "Settings": "设置",
+  "Logout": "注销",
   "Terms": "条款",
   "Privacy": "隐私",
   "About": "关于",
@@ -13,5 +16,8 @@
   "Password": "密码",
   "Name": "姓名",
   "Username": "用户名",
-  "Confirm password": "确认密码"
+  "Confirm password": "确认密码",
+  "Upload": "上传",
+  "Profile": "个人资料",
+  "Save": "保存"
 }
