@@ -44,7 +44,7 @@ export default function ProfileForm() {
   }, [user]);
 
   return (
-    <Box sx={{ display: 'flex', flexDirection: 'column' }}>
+    <Box sx={{ flex: '1 1 auto', display: 'flex', flexDirection: 'column' }}>
       {typeof errors === 'string' && <Alert severity="error">{errors}</Alert>}
       <TextField
         label={t('Name')}
