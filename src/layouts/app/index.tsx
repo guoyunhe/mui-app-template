@@ -1,11 +1,20 @@
+import { Box } from '@mui/material';
+import { useState } from 'react';
 import { Outlet } from 'react-router-dom';
+import LeftNav from './LeftNav';
+import TopNav from './TopNav';
+import config from './config';
 
-// Layout of the main app for registered users
 export default function AppLayout() {
+  const [drawerOpen, setDrawerOpen] = useState(false);
+
   return (
     <div>
-      <h1>Dashboard</h1>
-      <Outlet />
+      <LeftNav drawerOpen={drawerOpen} onDrawerClose={() => setDrawerOpen(false)} />
+      <Box sx={{ marginLeft: { sm: config.drawerWidth } }}>
+        <TopNav onMenuButtonClick={() => setDrawerOpen((prev) => !prev)} />
+        <Outlet />
+      </Box>
     </div>
   );
 }

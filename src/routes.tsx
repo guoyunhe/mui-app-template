@@ -4,10 +4,12 @@ import AdminLayout from './layouts/admin';
 import AppLayout from './layouts/app';
 import AuthLayout from './layouts/auth';
 import LandingLayout from './layouts/landing';
+import DashboardPage from './pages/dashboard';
 import NotFound from './pages/error/not-found';
-import Home from './pages/home';
+import HomePage from './pages/home';
 import LoginPage from './pages/login';
 import RegisterPage from './pages/register';
+import SettingsPage from './pages/settings';
 
 const routes: RouteObject[] = [
   {
@@ -17,7 +19,7 @@ const routes: RouteObject[] = [
     children: [
       {
         index: true,
-        element: <Home />,
+        element: <HomePage />,
       },
     ],
   },
@@ -36,12 +38,16 @@ const routes: RouteObject[] = [
     ],
   },
   {
-    path: 'app',
+    path: '/',
     element: (
       <RequireAuth>
         <AppLayout />
       </RequireAuth>
     ),
+    children: [
+      { path: 'dashboard', element: <DashboardPage /> },
+      { path: 'settings', element: <SettingsPage /> },
+    ],
   },
   {
     path: 'admin',
