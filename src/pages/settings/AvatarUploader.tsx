@@ -14,15 +14,14 @@ export default function AvatarUploader() {
     <Box
       sx={{
         display: 'flex',
-        flexDirection: { sm: 'column' },
-        alignItems: 'center',
+        flexDirection: 'column',
         mb: { xs: 2, sm: 0 },
         mr: { xs: 0, sm: 2 },
       }}
     >
       <Avatar
         src={user?.avatar?.url}
-        sx={{ width: avatarSize, height: avatarSize, mb: { xs: 0, sm: 2 }, mr: { xs: 2, sm: 0 } }}
+        sx={{ width: avatarSize, height: avatarSize, mx: 'auto', mb: 2 }}
       />
       <Button variant="outlined" component="label" startIcon={<UploadIcon />}>
         {t('Upload')}

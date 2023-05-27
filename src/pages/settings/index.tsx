@@ -1,21 +1,17 @@
-import { Box, Card, CardContent, CardHeader, Container } from '@mui/material';
+import { Container, Typography } from '@mui/material';
 import { useTranslation } from 'react-i18next';
-import AvatarUploader from './AvatarUploader';
-import ProfileForm from './ProfileForm';
+import PasswordCard from './PasswordCard';
+import ProfileCard from './ProfileCard';
 
 export default function SettingsPage() {
   const { t } = useTranslation();
   return (
     <Container maxWidth="sm" sx={{ pt: 3 }}>
-      <Card variant="outlined">
-        <CardHeader title={t('Profile')} />
-        <CardContent>
-          <Box sx={{ display: { sm: 'flex' } }}>
-            <AvatarUploader />
-            <ProfileForm />
-          </Box>
-        </CardContent>
-      </Card>
+      <Typography variant="h1" sx={{ mb: 3 }}>
+        {t('Settings')}
+      </Typography>
+      <ProfileCard />
+      <PasswordCard />
     </Container>
   );
 }
