@@ -34,7 +34,7 @@ export default function AvatarUploader() {
             if (avatar) {
               const data = new FormData();
               data.append('avatar', avatar);
-              axios.patch('/user', data).then((res) => {
+              axios.put('/user', data).then((res) => {
                 setUser(res.data);
               });
             }

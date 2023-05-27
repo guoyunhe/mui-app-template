@@ -25,7 +25,7 @@ export default function ProfileForm() {
   const submit = () => {
     setLoading(true);
     axios
-      .patch('/user', { name, username, email })
+      .put('/user', { name, username, email })
       .then((res) => {
         setUser(res.data);
       })

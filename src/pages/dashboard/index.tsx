@@ -14,7 +14,7 @@ export default function DashboardPage() {
             const data = new FormData();
             data.append('avatar', avatar);
             axios
-              .patch('/user', data, { headers: { 'Content-Type': 'multipart/form-data' } })
+              .put('/user', data, { headers: { 'Content-Type': 'multipart/form-data' } })
               .then((res) => {
                 auth.setUser(res.data);
               });
