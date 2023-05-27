@@ -18,6 +18,10 @@
   "Username": "Username",
   "Confirm password": "Confirm password",
   "Upload": "Upload",
-  "Profile": "Profile",
-  "Save": "Save"
+  "Password updated successfully": "Password updated successfully",
+  "Failed to update password": "Failed to update password",
+  "Old password": "Old password",
+  "New password": "New password",
+  "Save": "Save",
+  "Profile": "Profile"
 }

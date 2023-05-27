@@ -38,10 +38,10 @@ export default function ProfileForm() {
       <CardContent>
         <Box sx={{ display: 'flex', flexDirection: 'column' }}>
           {status === RequestStatus.Succeeded && (
-            <Alert severity="success">{t('Password updated successfully!')}</Alert>
+            <Alert severity="success">{t('Password updated successfully')}</Alert>
           )}
           {status === RequestStatus.Failed && (
-            <Alert severity="error">{errors?.message || t('Failed to update password.')}</Alert>
+            <Alert severity="error">{errors?.message || t('Failed to update password')}</Alert>
           )}
           <TextField
             label={t('Old password')}
