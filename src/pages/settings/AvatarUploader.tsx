@@ -11,8 +11,19 @@ export default function AvatarUploader() {
   const { user, setUser } = useAuth<User>();
   const { t } = useTranslation();
   return (
-    <Box sx={{ textAlign: 'center' }}>
-      <Avatar src={user?.avatar?.url} sx={{ width: avatarSize, height: avatarSize, mb: 2 }} />
+    <Box
+      sx={{
+        display: 'flex',
+        flexDirection: { sm: 'column' },
+        alignItems: 'center',
+        mb: { xs: 2, sm: 0 },
+        mr: { xs: 0, sm: 2 },
+      }}
+    >
+      <Avatar
+        src={user?.avatar?.url}
+        sx={{ width: avatarSize, height: avatarSize, mb: { xs: 0, sm: 2 }, mr: { xs: 2, sm: 0 } }}
+      />
       <Button variant="outlined" component="label" startIcon={<UploadIcon />}>
         {t('Upload')}
         <input

@@ -10,7 +10,7 @@ export default function SettingsPage() {
       <Card variant="outlined">
         <CardHeader title={t('Profile')} />
         <CardContent>
-          <Box sx={{ display: 'flex' }}>
+          <Box sx={{ display: { sm: 'flex' } }}>
             <AvatarUploader />
             <ProfileForm />
           </Box>

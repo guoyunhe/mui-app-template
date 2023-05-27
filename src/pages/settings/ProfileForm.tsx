@@ -44,7 +44,7 @@ export default function ProfileForm() {
   }, [user]);
 
   return (
-    <Box sx={{ ml: 2 }}>
+    <Box>
       {typeof errors === 'string' && <Alert severity="error">{errors}</Alert>}
       <TextField
         label={t('Name')}
