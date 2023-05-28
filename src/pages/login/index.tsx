@@ -15,7 +15,7 @@ export default function LoginPage() {
       <RedirectAfterAuth />
       <Typography variant="h4">{t('Login')}</Typography>
       <Stack spacing={3} mt={3}>
-        {typeof errors === 'string' && <Alert severity="error">{errors}</Alert>}
+        {errors?.message && <Alert severity="error">{errors?.message}</Alert>}
         <TextField
           label={t('Email')}
           type="email"
