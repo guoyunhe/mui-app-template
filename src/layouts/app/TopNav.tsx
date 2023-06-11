@@ -12,7 +12,7 @@ export default function TopNav({ onMenuButtonClick }: TopNavProps) {
         <IconButton color="inherit" edge="start" onClick={onMenuButtonClick}>
           <MenuIcon />
         </IconButton>
-        <Typography variant="h6" noWrap component="div">
+        <Typography variant="h3" noWrap component="div">
           {import.meta.env.VITE_APP_NAME}
         </Typography>
       </Toolbar>
