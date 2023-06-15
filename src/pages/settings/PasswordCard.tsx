@@ -7,7 +7,7 @@ import { useTranslation } from 'react-i18next';
 import RequestStatus from 'src/types/enums/RequestStatus';
 import getFieldError from 'src/utils/getFieldError';
 
-export default function ProfileForm() {
+export default function PasswordCard() {
   const { t } = useTranslation();
 
   const [oldPassword, setOldPassword] = useState('');

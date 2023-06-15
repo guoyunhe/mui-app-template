@@ -7,4 +7,6 @@ export default interface User extends Model {
   name: string;
   username: string;
   email: string;
+  role: string | null;
+  locale: string | null;
 }

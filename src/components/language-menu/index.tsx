@@ -1,6 +1,6 @@
 import { Translate as TranslateIcon } from '@mui/icons-material';
 import { Button, Menu, MenuItem } from '@mui/material';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { languages } from 'config/i18n';
@@ -14,11 +14,6 @@ export default function LanguageMenu() {
   };
 
   const currentLang = languages.find((lang) => i18n.language === lang.code);
-
-  useEffect(() => {
-    // sync html lang attribute
-    document.documentElement.setAttribute('lang', i18n.language.toLowerCase());
-  }, [i18n.language]);
 
   return (
     <>
