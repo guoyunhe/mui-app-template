@@ -18,11 +18,16 @@
   "Name": "Name",
   "Username": "Username",
   "Confirm password": "Confirm password",
+  "Avatar": "Avatar",
   "Upload": "Upload",
+  "Remove": "Remove",
+  "Language": "Language",
+  "Language updated successfully": "Language updated successfully",
+  "Failed to update language": "Failed to update language",
+  "Save": "Save",
   "Password updated successfully": "Password updated successfully",
   "Failed to update password": "Failed to update password",
   "Old password": "Old password",
   "New password": "New password",
-  "Save": "Save",
   "Profile": "Profile"
 }

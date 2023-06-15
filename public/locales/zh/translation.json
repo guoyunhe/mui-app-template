@@ -18,11 +18,16 @@
   "Name": "姓名",
   "Username": "用户名",
   "Confirm password": "确认密码",
+  "Avatar": "头像",
   "Upload": "上传",
+  "Remove": "移除",
+  "Language": "语言",
+  "Language updated successfully": "语言更新成功",
+  "Failed to update language": "语言更新失败",
+  "Save": "保存",
   "Password updated successfully": "密码更新成功",
   "Failed to update password": "密码更新失败",
   "Old password": "旧密码",
   "New password": "新密码",
-  "Save": "保存",
   "Profile": "个人资料"
 }
