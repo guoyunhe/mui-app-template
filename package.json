@@ -21,14 +21,14 @@
     "@mui/lab": "5.0.0-alpha.134",
     "@mui/material": "^5.13.5",
     "axios": "^1.4.0",
-    "i18next": "^22.5.1",
+    "i18next": "^23.0.1",
     "i18next-browser-languagedetector": "^7.0.2",
     "i18next-fetch-backend": "^5.0.2",
     "i18next-parser": "^8.0.0",
     "mui-material-compact": "^1.5.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-i18next": "^12.3.1",
+    "react-i18next": "^13.0.0",
     "react-router-dom": "^6.13.0"
   },
   "devDependencies": {
@@ -42,7 +42,7 @@
     "@typescript-eslint/eslint-plugin": "^5.59.11",
     "@typescript-eslint/parser": "^5.59.11",
     "@vitejs/plugin-react-swc": "^3.3.2",
-    "@vitest/ui": "^0.31.4",
+    "@vitest/ui": "^0.32.0",
     "axios-mock-adapter": "^1.21.5",
     "bing-translate-api": "^2.9.1",
     "eslint": "^8.42.0",
@@ -61,7 +61,7 @@
     "vite-plugin-adsense": "^1.0.4",
     "vite-plugin-ejs": "^1.6.4",
     "vite-tsconfig-paths": "^4.2.0",
-    "vitest": "^0.31.4"
+    "vitest": "^0.32.0"
   },
   "prettier": {
     "printWidth": 100
