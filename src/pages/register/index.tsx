@@ -1,6 +1,6 @@
-import { RedirectAfterAuth, useRegister } from '@guoyunhe/react-auth';
+import { useRegister } from '@guoyunhe/react-auth';
 import { LoadingButton } from '@mui/lab';
-import { Alert, Paper, Stack, TextField, Typography } from '@mui/material';
+import { Alert, Stack, TextField } from '@mui/material';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import getFieldError from 'src/utils/getFieldError';
@@ -27,70 +27,66 @@ export default function RegisterPage() {
   const passwordConfirmError = getFieldError(errors, 'passwordConfirm');
 
   return (
-    <Paper sx={{ borderRadius: 5, p: 5 }}>
-      <RedirectAfterAuth />
-      <Typography variant="h4">{t('Register')}</Typography>
-      <Stack spacing={3} mt={3}>
-        {typeof errors === 'string' && <Alert severity="error">{errors}</Alert>}
-        <TextField
-          label={t('Name')}
-          type="text"
-          name="name"
-          value={name}
-          onChange={(e) => {
-            setName(e.target.value);
-          }}
-          error={!!nameError}
-          helperText={nameError}
-        />
-        <TextField
-          label={t('Username')}
-          type="text"
-          name="username"
-          value={username}
-          onChange={(e) => {
-            setUsername(e.target.value?.replace(/[^A-Za-z0-9_]/g, ''));
-          }}
-          error={!!usernameError}
-          helperText={usernameError}
-        />
-        <TextField
-          label={t('Email')}
-          type="email"
-          name="email"
-          value={email}
-          onChange={(e) => {
-            setEmail(e.target.value);
-          }}
-          error={!!emailError}
-          helperText={emailError}
-        />
-        <TextField
-          label={t('Password')}
-          type="password"
-          name="password"
-          value={password}
-          onChange={(e) => {
-            setPassword(e.target.value);
-          }}
-          error={!!passwordError}
-          helperText={passwordError}
-        />
-        <TextField
-          label={t('Confirm password')}
-          type="password"
-          name="passwordConfirm"
-          value={passwordConfirm}
-          onChange={(e) => {
-            setPasswordConfirm(e.target.value);
-          }}
-          error={!!passwordConfirmError}
-          helperText={passwordConfirmError}
-        />
-        <LoadingButton variant="contained" loading={loading} onClick={submit}>
-          {t('Register')}
-        </LoadingButton>
-      </Stack>
-    </Paper>
+    <Stack spacing={3} p={3}>
+      {typeof errors === 'string' && <Alert severity="error">{errors}</Alert>}
+      <TextField
+        label={t('Name')}
+        type="text"
+        name="name"
+        value={name}
+        onChange={(e) => {
+          setName(e.target.value);
+        }}
+        error={!!nameError}
+        helperText={nameError}
+      />
+      <TextField
+        label={t('Username')}
+        type="text"
+        name="username"
+        value={username}
+        onChange={(e) => {
+          setUsername(e.target.value?.replace(/[^A-Za-z0-9_]/g, ''));
+        }}
+        error={!!usernameError}
+        helperText={usernameError}
+      />
+      <TextField
+        label={t('Email')}
+        type="email"
+        name="email"
+        value={email}
+        onChange={(e) => {
+          setEmail(e.target.value);
+        }}
+        error={!!emailError}
+        helperText={emailError}
+      />
+      <TextField
+        label={t('Password')}
+        type="password"
+        name="password"
+        value={password}
+        onChange={(e) => {
+          setPassword(e.target.value);
+        }}
+        error={!!passwordError}
+        helperText={passwordError}
+      />
+      <TextField
+        label={t('Confirm password')}
+        type="password"
+        name="passwordConfirm"
+        value={passwordConfirm}
+        onChange={(e) => {
+          setPasswordConfirm(e.target.value);
+        }}
+        error={!!passwordConfirmError}
+        helperText={passwordConfirmError}
+      />
+      <LoadingButton variant="contained" loading={loading} onClick={submit}>
+        {t('Register')}
+      </LoadingButton>
+    </Stack>
   );
 }
