@@ -2,7 +2,7 @@ import Image from './Image';
 import Model from './Model';
 
 export default interface User extends Model {
-  avatar?: Image;
+  avatar?: Image | null;
   avatarId: number | null;
   name: string;
   username: string;
