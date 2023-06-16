@@ -22,6 +22,10 @@ const RegisterPage = lazy(() => import('./pages/register'));
 const DashboardPage = lazy(() => import('./pages/dashboard'));
 const SettingsPage = lazy(() => import('./pages/settings'));
 
+// admin pages
+const AdminDashboardPage = lazy(() => import('./pages/admin-dashboard'));
+const AdminUserListPage = lazy(() => import('./pages/admin-user-list'));
+
 // error pages
 const NotFound = lazy(() => import('./pages/not-found'));
 
@@ -82,6 +86,16 @@ const routes: RouteObject[] = [
         <AdminLayout />
       </RequireAuth>
     ),
+    children: [
+      {
+        index: true,
+        element: <AdminDashboardPage />,
+      },
+      {
+        path: 'users',
+        element: <AdminUserListPage />,
+      },
+    ],
   },
 ];
 
