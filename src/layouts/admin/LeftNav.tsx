@@ -61,7 +61,7 @@ export default function LeftNav({ drawerOpen, onDrawerClose }: LeftNavProps) {
           <ListItemIcon>
             <SettingsIcon />
           </ListItemIcon>
-          <ListItemText primary={t('Settings')} />
+          <ListItemText primary={t('Admin Settings')} />
         </ListItemButton>
         <ListItemButton onClick={logout.submit} disabled={logout.loading}>
           <ListItemIcon>
