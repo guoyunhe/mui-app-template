@@ -12,7 +12,7 @@ export interface UserCardProps {
 }
 
 export default function UserCard({ user, onDelete }: UserCardProps) {
-  const { t } = useTranslation();
+  const { t } = useTranslation('admin');
   const [deleting, setDeleting] = useState(false);
 
   return (
