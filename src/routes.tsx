@@ -1,15 +1,29 @@
 import { RequireAuth } from '@guoyunhe/react-auth';
+import { lazy } from 'react';
 import { RouteObject } from 'react-router-dom';
-import AdminLayout from './layouts/admin';
-import AppLayout from './layouts/app';
-import AuthLayout from './layouts/auth';
-import LandingLayout from './layouts/landing';
-import DashboardPage from './pages/dashboard';
-import NotFound from './pages/error/not-found';
-import HomePage from './pages/home';
-import LoginPage from './pages/login';
-import RegisterPage from './pages/register';
-import SettingsPage from './pages/settings';
+
+// layouts
+const AppLayout = lazy(() => import('./layouts/app'));
+const AdminLayout = lazy(() => import('./layouts/admin'));
+const AuthLayout = lazy(() => import('./layouts/auth'));
+const LandingLayout = lazy(() => import('./layouts/landing'));
+
+// landing pages
+const HomePage = lazy(() => import('./pages/home'));
+const AboutPage = lazy(() => import('./pages/about'));
+const PrivacyPage = lazy(() => import('./pages/privacy'));
+const TermsPage = lazy(() => import('./pages/terms'));
+
+// auth pages
+const LoginPage = lazy(() => import('./pages/login'));
+const RegisterPage = lazy(() => import('./pages/register'));
+
+// app pages
+const DashboardPage = lazy(() => import('./pages/dashboard'));
+const SettingsPage = lazy(() => import('./pages/settings'));
+
+// error pages
+const NotFound = lazy(() => import('./pages/error/not-found'));
 
 const routes: RouteObject[] = [
   {
@@ -20,6 +34,18 @@ const routes: RouteObject[] = [
       {
         index: true,
         element: <HomePage />,
+      },
+      {
+        path: 'about',
+        element: <AboutPage />,
+      },
+      {
+        path: 'privacy',
+        element: <PrivacyPage />,
+      },
+      {
+        path: 'terms',
+        element: <TermsPage />,
       },
     ],
   },
