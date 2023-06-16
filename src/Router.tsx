@@ -1,6 +1,6 @@
 import { RequireAuth } from '@guoyunhe/react-auth';
 import { lazy } from 'react';
-import { RouteObject } from 'react-router-dom';
+import { RouteObject, RouterProvider, createBrowserRouter } from 'react-router-dom';
 
 // layouts
 const AppLayout = lazy(() => import('./layouts/app'));
@@ -85,4 +85,8 @@ const routes: RouteObject[] = [
   },
 ];
 
-export default routes;
+const router = createBrowserRouter(routes);
+
+export default function Router() {
+  return <RouterProvider router={router} />;
+}

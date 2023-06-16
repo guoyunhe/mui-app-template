@@ -1,12 +1,9 @@
 import { AuthProvider } from '@guoyunhe/react-auth';
 import { CircularProgress, CssBaseline, ThemeProvider } from '@mui/material';
 import { Suspense } from 'react';
-import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+import Router from './Router';
 import LanguageEffects from './components/language-effects';
-import routes from './routes';
 import theme from './theme';
-
-const router = createBrowserRouter(routes);
 
 export default function App() {
   return (
@@ -28,7 +25,7 @@ export default function App() {
         <AuthProvider>
           <CssBaseline />
           <LanguageEffects />
-          <RouterProvider router={router} />
+          <Router />
         </AuthProvider>
       </ThemeProvider>
     </Suspense>
