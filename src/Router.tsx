@@ -69,14 +69,14 @@ const routes: RouteObject[] = [
     ],
   },
   {
-    path: '/',
+    path: '/app',
     element: (
       <RequireAuth>
         <AppLayout />
       </RequireAuth>
     ),
     children: [
-      { path: 'dashboard', element: <DashboardPage /> },
+      { index: true, element: <DashboardPage /> },
       { path: 'settings', element: <SettingsPage /> },
     ],
   },
