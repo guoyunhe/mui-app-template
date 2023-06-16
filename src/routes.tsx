@@ -23,7 +23,7 @@ const DashboardPage = lazy(() => import('./pages/dashboard'));
 const SettingsPage = lazy(() => import('./pages/settings'));
 
 // error pages
-const NotFound = lazy(() => import('./pages/error/not-found'));
+const NotFound = lazy(() => import('./pages/not-found'));
 
 const routes: RouteObject[] = [
   {
