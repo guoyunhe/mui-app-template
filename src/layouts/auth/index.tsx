@@ -40,7 +40,7 @@ export default function AuthLayout() {
             <Tab label={t('Login')} value="/login" />
             <Tab label={t('Register')} value="/register" />
           </Tabs>
-          <RedirectAfterAuth />
+          <RedirectAfterAuth to="/app" />
           <Outlet />
         </Paper>
       </Box>
