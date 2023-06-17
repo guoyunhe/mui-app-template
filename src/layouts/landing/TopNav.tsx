@@ -1,11 +1,12 @@
 import { AuthStatus, useAuth, useLogout } from '@guoyunhe/react-auth';
 import {
   AutoAwesome as AutoAwesomeIcon,
-  Dashboard,
+  Dashboard as DashboardIcon,
   Login as LoginIcon,
   Logout as LogoutIcon,
   Menu as MenuIcon,
   PersonAdd as PersonAddIcon,
+  Settings as SettingsIcon,
   SupportAgent as SupportAgentIcon,
 } from '@mui/icons-material';
 import { LoadingButton } from '@mui/lab';
@@ -92,12 +93,22 @@ export default function TopNav({ onMenuButtonClick }: TopNavProps) {
             <Button
               variant="text"
               color="inherit"
-              startIcon={<Dashboard />}
+              startIcon={<DashboardIcon />}
               component={NavLink}
               to="/app"
               sx={{ display: { xs: 'none', sm: 'flex' } }}
             >
               {t('Dashboard')}
+            </Button>
+            <Button
+              variant="text"
+              color="inherit"
+              startIcon={<SettingsIcon />}
+              component={NavLink}
+              to="/app"
+              sx={{ display: { xs: 'none', sm: 'flex' } }}
+            >
+              {t('Settings')}
             </Button>
             <LoadingButton
               variant="text"
