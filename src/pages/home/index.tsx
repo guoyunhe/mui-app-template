@@ -1,14 +1,9 @@
-import { AuthStatus, useAuth } from '@guoyunhe/react-auth';
 import { Box, Typography, colors } from '@mui/material';
 import { useTranslation } from 'react-i18next';
-import { Navigate } from 'react-router-dom';
 
 export default function HomePage() {
-  const auth = useAuth();
   const { t } = useTranslation();
-  if (auth.status === AuthStatus.LoggedIn) {
-    return <Navigate to="/dashboard" />;
-  }
+
   return (
     <Box>
       <Box
