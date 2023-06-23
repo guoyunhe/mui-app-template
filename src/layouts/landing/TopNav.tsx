@@ -46,7 +46,7 @@ export default function TopNav({ onMenuButtonClick }: TopNavProps) {
             src="/logo.svg"
             sx={{ mr: 1, display: { xs: 'none', sm: 'block' } }}
           />
-          <Typography variant="h3" color="inherit" component="div">
+          <Typography fontSize={20} color="inherit" component="div">
             {import.meta.env.VITE_APP_NAME}
           </Typography>
         </Box>
