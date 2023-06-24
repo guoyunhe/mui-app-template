@@ -1,5 +1,6 @@
 import { Menu as MenuIcon } from '@mui/icons-material';
-import { AppBar, IconButton, Toolbar, Typography } from '@mui/material';
+import { AppBar, Box, IconButton, Toolbar, Typography } from '@mui/material';
+import { PaletteModeIconButton } from 'mui-palette-mode';
 
 export interface TopNavProps {
   onMenuButtonClick: () => void;
@@ -15,6 +16,8 @@ export default function TopNav({ onMenuButtonClick }: TopNavProps) {
         <Typography fontSize={20} noWrap component="div">
           {import.meta.env.VITE_APP_NAME}
         </Typography>
+        <Box flexGrow={1} />
+        <PaletteModeIconButton />
       </Toolbar>
     </AppBar>
   );

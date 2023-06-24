@@ -1,9 +1,10 @@
 import { AuthProvider } from '@guoyunhe/react-auth';
-import { CircularProgress, CssBaseline, ThemeProvider } from '@mui/material';
+import { CircularProgress, CssBaseline } from '@mui/material';
+import { DualThemeProvider } from 'mui-palette-mode';
 import { Suspense } from 'react';
 import Router from './Router';
 import LanguageEffects from './components/language-effects';
-import theme from './theme';
+import { darkTheme, lightTheme } from './themes';
 
 export default function App() {
   return (
@@ -21,13 +22,13 @@ export default function App() {
         />
       }
     >
-      <ThemeProvider theme={theme}>
+      <DualThemeProvider lightTheme={lightTheme} darkTheme={darkTheme} defaultPaletteMode="auto">
         <AuthProvider>
           <CssBaseline />
           <LanguageEffects />
           <Router />
         </AuthProvider>
-      </ThemeProvider>
+      </DualThemeProvider>
     </Suspense>
   );
 }
