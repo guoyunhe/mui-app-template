@@ -2,14 +2,13 @@ import { AuthProvider } from '@guoyunhe/react-auth';
 import { CircularProgress, CssBaseline } from '@mui/material';
 import { DualThemeProvider } from 'mui-palette-mode';
 import { Suspense } from 'react';
-import { useTranslation } from 'react-i18next';
+import { Trans } from 'react-i18next';
 import { RouterProvider } from 'react-router-dom';
 import LanguageEffects from './components/language-effects';
 import router from './router';
 import { darkTheme, lightTheme } from './themes';
 
 export default function App() {
-  const { t } = useTranslation();
   return (
     <Suspense
       fallback={
@@ -30,9 +29,9 @@ export default function App() {
         darkTheme={darkTheme}
         defaultPaletteMode="auto"
         messages={{
-          auto: t('Auto'),
-          dark: t('Dark'),
-          light: t('Light'),
+          auto: <Trans>Auto</Trans>,
+          dark: <Trans>Dark</Trans>,
+          light: <Trans>Light</Trans>,
         }}
       >
         <AuthProvider>
