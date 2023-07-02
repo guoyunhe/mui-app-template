@@ -1,4 +1,7 @@
 {
+  "Auto": "Auto",
+  "Dark": "Dark",
+  "Light": "Light",
   "Terms": "Terms",
   "Privacy": "Privacy",
   "About": "About",
@@ -11,8 +14,6 @@
   "Features": "Features",
   "Pricing": "Pricing",
   "Support": "Support",
-  "Something Impressive": "Something Impressive",
-  "Content Block": "Content Block",
   "Email": "Email",
   "Password": "Password",
   "Name": "Name",

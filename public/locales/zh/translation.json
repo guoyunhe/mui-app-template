@@ -1,4 +1,7 @@
 {
+  "Auto": "自动",
+  "Dark": "暗色",
+  "Light": "亮色",
   "Terms": "条款",
   "Privacy": "隐私",
   "About": "关于",
@@ -11,8 +14,6 @@
   "Features": "特性",
   "Pricing": "价格",
   "Support": "支持",
-  "Something Impressive": "Something Impressive",
-  "Content Block": "Content Block",
   "Email": "邮箱",
   "Password": "密码",
   "Name": "姓名",
