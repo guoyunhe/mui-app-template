@@ -1,4 +1,5 @@
 import { defineConfig, externalizeDepsPlugin } from 'electron-vite';
+import { resolve } from 'path';
 import config from './vite.config';
 
 export default defineConfig({
@@ -22,8 +23,10 @@ export default defineConfig({
     ...config,
     root: './',
     build: {
-      lib: {
-        entry: './index.html',
+      rollupOptions: {
+        input: {
+          index: resolve(__dirname, 'index.html'),
+        },
       },
     },
   },
