@@ -42,7 +42,7 @@ export default function App() {
           }}
         >
           <AuthProvider>
-            <CssBaseline />
+            <CssBaseline enableColorScheme />
             <LanguageEffects />
             <RouterProvider router={router} />
           </AuthProvider>
