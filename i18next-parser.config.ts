@@ -1,5 +1,5 @@
 // https://github.com/i18next/i18next-parser
-import { languageCodes } from './config/i18n';
+import { languageCodes } from './src/config/i18n';
 
 export default {
   locales: languageCodes,
