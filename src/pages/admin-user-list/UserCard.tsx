@@ -4,7 +4,7 @@ import { Avatar, ListItem, ListItemAvatar, ListItemText } from '@mui/material';
 import axios from 'axios';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import User from 'src/types/models/User';
+import User from '~/types/models/User';
 
 export interface UserCardProps {
   user: User;

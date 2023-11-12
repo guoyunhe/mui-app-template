@@ -4,8 +4,8 @@ import { Alert, Box, Card, CardContent, CardHeader, TextField } from '@mui/mater
 import axios from 'axios';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import RequestStatus from 'src/types/enums/RequestStatus';
-import getFieldError from 'src/utils/getFieldError';
+import RequestStatus from '~/types/enums/RequestStatus';
+import getFieldError from '~/utils/getFieldError';
 
 export default function PasswordCard() {
   const { t } = useTranslation();

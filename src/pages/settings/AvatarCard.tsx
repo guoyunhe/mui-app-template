@@ -5,9 +5,9 @@ import { Avatar, Card, CardContent, CardHeader, Stack } from '@mui/material';
 import axios from 'axios';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import RequestStatus from 'src/types/enums/RequestStatus';
-import Image from 'src/types/models/Image';
-import User from 'src/types/models/User';
+import RequestStatus from '~/types/enums/RequestStatus';
+import Image from '~/types/models/Image';
+import User from '~/types/models/User';
 
 const avatarSize = 128;
 

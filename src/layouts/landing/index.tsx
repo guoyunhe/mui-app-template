@@ -1,7 +1,7 @@
 import { Box } from '@mui/material';
 import { useState } from 'react';
 import { Outlet } from 'react-router-dom';
-import Footer from 'src/components/footer';
+import Footer from '~/components/footer';
 import LeftNav from './LeftNav';
 import TopNav from './TopNav';
 

@@ -5,8 +5,8 @@ import { Alert, Box, Card, CardContent, CardHeader, TextField } from '@mui/mater
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import User from 'src/types/models/User';
-import getFieldError from 'src/utils/getFieldError';
+import User from '~/types/models/User';
+import getFieldError from '~/utils/getFieldError';
 
 export default function ProfileCard() {
   const { t } = useTranslation();

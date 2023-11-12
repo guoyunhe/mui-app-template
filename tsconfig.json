@@ -16,6 +16,9 @@
     "noEmit": true,
     "jsx": "react-jsx",
     "types": ["vitest/globals"],
-    "baseUrl": "."
+    "baseUrl": ".",
+    "paths": {
+      "~/*": ["src/*"]
+    }
   }
 }

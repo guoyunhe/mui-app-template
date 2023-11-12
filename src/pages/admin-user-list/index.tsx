@@ -3,8 +3,8 @@ import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSearchParams } from 'react-router-dom';
-import PaginatedResult from 'src/types/PaginatedResult';
-import User from 'src/types/models/User';
+import PaginatedResult from '~/types/PaginatedResult';
+import User from '~/types/models/User';
 import UserCard from './UserCard';
 
 export default function AdminUserListPage() {

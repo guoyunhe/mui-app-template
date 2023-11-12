@@ -14,8 +14,8 @@ import { AppBar, Avatar, Box, Button, IconButton, Stack, Toolbar, Typography } f
 import { PaletteModeButton } from 'mui-palette-mode';
 import { useTranslation } from 'react-i18next';
 import { NavLink } from 'react-router-dom';
-import LanguageMenu from 'src/components/language-menu';
-import User from 'src/types/models/User';
+import LanguageMenu from '~/components/language-menu';
+import User from '~/types/models/User';
 
 export interface TopNavProps {
   onMenuButtonClick: () => void;

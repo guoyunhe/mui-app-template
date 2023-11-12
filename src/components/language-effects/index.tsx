@@ -2,7 +2,7 @@ import { useAuth } from '@guoyunhe/react-auth';
 import axios from 'axios';
 import { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import User from 'src/types/models/User';
+import User from '~/types/models/User';
 
 export default function LanguageEffects() {
   const { i18n } = useTranslation();

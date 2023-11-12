@@ -5,10 +5,10 @@ import { Alert, Box, Card, CardContent, CardHeader, MenuItem, TextField } from '
 import axios from 'axios';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { languages } from 'src/config/i18n';
-import RequestStatus from 'src/types/enums/RequestStatus';
-import User from 'src/types/models/User';
-import getFieldError from 'src/utils/getFieldError';
+import { languages } from '~/config/i18n';
+import RequestStatus from '~/types/enums/RequestStatus';
+import User from '~/types/models/User';
+import getFieldError from '~/utils/getFieldError';
 
 export default function LanguageCard() {
   const { t, i18n } = useTranslation();

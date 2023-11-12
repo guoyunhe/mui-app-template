@@ -12,7 +12,7 @@ import {
 import { Divider, Drawer, List, ListItemButton, ListItemIcon, ListItemText } from '@mui/material';
 import { useTranslation } from 'react-i18next';
 import { NavLink } from 'react-router-dom';
-import User from 'src/types/models/User';
+import User from '~/types/models/User';
 import { drawerWidth } from './config';
 
 export interface LeftNavProps {

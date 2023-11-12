@@ -1,10 +1,9 @@
-import axios from 'axios';
 import i18n from 'i18next';
 import LanguageDetector from 'i18next-browser-languagedetector';
 import FetchBackend from 'i18next-fetch-backend';
 import { initReactI18next } from 'react-i18next';
 
-import { languageCodes } from 'src/config/i18n';
+import { languageCodes } from '../config/i18n';
 
 i18n
   .use(FetchBackend)
@@ -41,5 +40,3 @@ i18n
       caches: ['localStorage', 'cookie'],
     },
   });
-
-axios.defaults.baseURL = import.meta.env.VITE_API_BASE_URL;

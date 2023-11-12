@@ -3,7 +3,7 @@ import { ArrowBack } from '@mui/icons-material';
 import { AppBar, Box, Button, Paper, Tab, Tabs, Toolbar } from '@mui/material';
 import { useTranslation } from 'react-i18next';
 import { NavLink, Outlet, useLocation, useNavigate } from 'react-router-dom';
-import Footer from 'src/components/footer';
+import Footer from '~/components/footer';
 
 // Layout for login and register page.
 export default function AuthLayout() {
