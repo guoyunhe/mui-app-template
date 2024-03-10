@@ -11,15 +11,9 @@
     "lint": "eslint .",
     "format": "prettier --write .",
     "test": "vitest --ui",
-    "test:ci": "vitest run",
-    "postinstall": "electron-builder install-app-deps",
-    "electron:dev": "electron-vite dev",
-    "electron:build": "electron-vite build && electron-builder -mwl",
-    "electron:preview": "electron-vite preview"
+    "test:ci": "vitest run"
   },
   "dependencies": {
-    "@electron-toolkit/preload": "^2.0.0",
-    "@electron-toolkit/utils": "^2.0.1",
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
     "@fontsource/roboto": "^5.0.8",
@@ -53,9 +47,6 @@
     "@vitejs/plugin-react-swc": "^3.4.1",
     "@vitest/ui": "^0.34.6",
     "axios-mock-adapter": "^1.22.0",
-    "electron": "^27.0.4",
-    "electron-builder": "^24.6.4",
-    "electron-vite": "^1.0.28",
     "eslint": "^8.53.0",
     "eslint-config-prettier": "^8.10.0",
     "eslint-import-resolver-typescript": "^3.6.1",
