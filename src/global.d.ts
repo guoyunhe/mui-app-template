@@ -4,4 +4,4 @@ declare global {
   }
 }
 
-export { }; // must have this empty export to take effect
+export {}; // must have this empty export to take effect

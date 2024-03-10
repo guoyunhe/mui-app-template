@@ -13,5 +13,5 @@ import App from '~/App';
 createRoot(document.getElementById('root') as HTMLElement).render(
   <StrictMode>
     <App />
-  </StrictMode>
+  </StrictMode>,
 );

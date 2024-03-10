@@ -13,7 +13,7 @@ export default function LanguageEffects() {
     if (user?.locale) {
       i18n.changeLanguage(user.locale);
     }
-  }, [user?.locale]);
+  }, [user?.locale, i18n]);
 
   // sync i18next -> html lang attribute
   useEffect(() => {
