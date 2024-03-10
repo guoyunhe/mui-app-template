@@ -4,6 +4,7 @@ import axios from 'axios';
 import { DualThemeProvider } from 'mui-palette-mode';
 import { Suspense } from 'react';
 import { FetchConfigProvider, IndexedDBStore } from 'react-fast-fetch';
+import { HelmetProvider } from 'react-helmet-async';
 import { useTranslation } from 'react-i18next';
 import { RouterProvider } from 'react-router-dom';
 import LanguageEffects from './components/language-effects';
@@ -16,38 +17,40 @@ const fetcher = (url: string) => axios.get(url).then((res) => res.data);
 export default function App() {
   const { t } = useTranslation();
   return (
-    <FetchConfigProvider store={store} fetcher={fetcher}>
-      <Suspense
-        fallback={
-          <CircularProgress
-            size={48}
-            sx={{
-              display: 'block',
-              position: 'fixed',
-              left: '50%',
-              top: '50%',
-              m: -3,
-            }}
-          />
-        }
-      >
-        <DualThemeProvider
-          lightTheme={lightTheme}
-          darkTheme={darkTheme}
-          defaultPaletteMode="auto"
-          messages={{
-            auto: t('Auto'),
-            dark: t('Dark'),
-            light: t('Light'),
-          }}
+    <HelmetProvider>
+      <FetchConfigProvider store={store} fetcher={fetcher}>
+        <Suspense
+          fallback={
+            <CircularProgress
+              size={48}
+              sx={{
+                display: 'block',
+                position: 'fixed',
+                left: '50%',
+                top: '50%',
+                m: -3,
+              }}
+            />
+          }
         >
-          <AuthProvider>
-            <CssBaseline enableColorScheme />
-            <LanguageEffects />
-            <RouterProvider router={router} />
-          </AuthProvider>
-        </DualThemeProvider>
-      </Suspense>
-    </FetchConfigProvider>
+          <DualThemeProvider
+            lightTheme={lightTheme}
+            darkTheme={darkTheme}
+            defaultPaletteMode="auto"
+            messages={{
+              auto: t('Auto'),
+              dark: t('Dark'),
+              light: t('Light'),
+            }}
+          >
+            <AuthProvider>
+              <CssBaseline enableColorScheme />
+              <LanguageEffects />
+              <RouterProvider router={router} />
+            </AuthProvider>
+          </DualThemeProvider>
+        </Suspense>
+      </FetchConfigProvider>
+    </HelmetProvider>
   );
 }
