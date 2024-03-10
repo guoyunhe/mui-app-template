@@ -21,8 +21,12 @@ export default function HomePage() {
         justifyContent="center"
         alignItems="center"
       >
-        <Typography variant="h1">{t('Something Impressive')}</Typography>
-        <Button variant="outlined">{t('Get Started')}</Button>
+        <Typography variant="h1" mb={4}>
+          {t('Something Impressive')}
+        </Typography>
+        <Button variant="contained" size="large">
+          {t('Get Started')}
+        </Button>
       </Box>
       <Box
         component="section"
