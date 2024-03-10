@@ -11,7 +11,7 @@ import {
 } from '@mui/icons-material';
 import { Divider, Drawer, List, ListItemButton, ListItemIcon, ListItemText } from '@mui/material';
 import { useTranslation } from 'react-i18next';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 import User from '~/types/models/User';
 import { drawerWidth } from './config';
 
@@ -22,25 +22,38 @@ export interface LeftNavProps {
 
 export default function LeftNav({ drawerOpen, onDrawerClose }: LeftNavProps) {
   const { t } = useTranslation();
+  const location = useLocation();
   const auth = useAuth<User>();
   const logout = useLogout();
 
   return (
     <Drawer open={drawerOpen} onClose={onDrawerClose} sx={{ width: drawerWidth }}>
       <List sx={{ width: drawerWidth }} onClick={onDrawerClose}>
-        <ListItemButton component={NavLink} to="/features">
+        <ListItemButton
+          selected={location.pathname === '/features'}
+          component={NavLink}
+          to="/features"
+        >
           <ListItemIcon>
             <AutoAwesomeIcon />
           </ListItemIcon>
           <ListItemText primary={t('Features')} />
         </ListItemButton>
-        <ListItemButton component={NavLink} to="/pricing">
+        <ListItemButton
+          selected={location.pathname === '/pricing'}
+          component={NavLink}
+          to="/pricing"
+        >
           <ListItemIcon>
             <SellIcon />
           </ListItemIcon>
           <ListItemText primary={t('Pricing')} />
         </ListItemButton>
-        <ListItemButton component={NavLink} to="/support">
+        <ListItemButton
+          selected={location.pathname === '/support'}
+          component={NavLink}
+          to="/support"
+        >
           <ListItemIcon>
             <SupportAgentIcon />
           </ListItemIcon>

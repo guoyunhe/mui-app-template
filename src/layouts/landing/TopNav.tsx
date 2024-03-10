@@ -1,6 +1,7 @@
 import { AuthStatus, useAuth, useLogout } from '@guoyunhe/react-auth';
 import {
   AutoAwesome as AutoAwesomeIcon,
+  CreditCard,
   Dashboard as DashboardIcon,
   Login as LoginIcon,
   Logout as LogoutIcon,
@@ -13,7 +14,7 @@ import { LoadingButton } from '@mui/lab';
 import { AppBar, Avatar, Box, Button, IconButton, Stack, Toolbar, Typography } from '@mui/material';
 import { PaletteModeButton } from 'mui-palette-mode';
 import { useTranslation } from 'react-i18next';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 import LanguageMenu from '~/components/language-menu';
 import User from '~/types/models/User';
 
@@ -23,6 +24,7 @@ export interface TopNavProps {
 
 export default function TopNav({ onMenuButtonClick }: TopNavProps) {
   const { t } = useTranslation();
+  const location = useLocation();
   const auth = useAuth<User>();
   const logout = useLogout();
 
@@ -53,8 +55,9 @@ export default function TopNav({ onMenuButtonClick }: TopNavProps) {
         </Box>
         <Stack direction="row" ml={3} sx={{ display: { xs: 'none', sm: 'flex' } }}>
           <Button
-            variant="text"
+            variant={location.pathname === '/features' ? 'contained' : 'text'}
             color="inherit"
+            disableElevation
             component={NavLink}
             to="/features"
             startIcon={<AutoAwesomeIcon />}
@@ -62,12 +65,22 @@ export default function TopNav({ onMenuButtonClick }: TopNavProps) {
             {t('Features')}
           </Button>
           <Button
-            variant="text"
+            variant={location.pathname === '/pricing' ? 'contained' : 'text'}
             color="inherit"
+            disableElevation
+            startIcon={<CreditCard />}
+            component={NavLink}
+            to="/pricing"
+          >
+            {t('Pricing')}
+          </Button>
+          <Button
+            variant={location.pathname === '/support' ? 'contained' : 'text'}
+            color="inherit"
+            disableElevation
             startIcon={<SupportAgentIcon />}
-            component="a"
-            href="https://t.me/resume_maker_support"
-            target="_blank"
+            component={NavLink}
+            to="/support"
           >
             {t('Support')}
           </Button>
@@ -79,6 +92,7 @@ export default function TopNav({ onMenuButtonClick }: TopNavProps) {
             <Button
               variant="text"
               color="inherit"
+              disableElevation
               startIcon={
                 <Avatar
                   src={auth.user.avatar?.url}
@@ -95,6 +109,7 @@ export default function TopNav({ onMenuButtonClick }: TopNavProps) {
             <Button
               variant="text"
               color="inherit"
+              disableElevation
               startIcon={<DashboardIcon />}
               component={NavLink}
               to="/app"
@@ -105,6 +120,7 @@ export default function TopNav({ onMenuButtonClick }: TopNavProps) {
             <Button
               variant="text"
               color="inherit"
+              disableElevation
               startIcon={<SettingsIcon />}
               component={NavLink}
               to="/app"
@@ -115,6 +131,7 @@ export default function TopNav({ onMenuButtonClick }: TopNavProps) {
             <LoadingButton
               variant="text"
               color="inherit"
+              disableElevation
               startIcon={<LogoutIcon />}
               loading={logout.loading}
               loadingPosition="start"
@@ -130,6 +147,7 @@ export default function TopNav({ onMenuButtonClick }: TopNavProps) {
             <Button
               variant="text"
               color="inherit"
+              disableElevation
               startIcon={<LoginIcon />}
               component={NavLink}
               to="/login"
@@ -140,6 +158,7 @@ export default function TopNav({ onMenuButtonClick }: TopNavProps) {
             <Button
               variant="text"
               color="inherit"
+              disableElevation
               startIcon={<PersonAddIcon />}
               component={NavLink}
               to="/register"
