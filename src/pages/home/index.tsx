@@ -17,6 +17,7 @@ export default function HomePage() {
         bgcolor={colors.amber[300]}
         height={400}
         display="flex"
+        flexDirection="column"
         justifyContent="center"
         alignItems="center"
       >
