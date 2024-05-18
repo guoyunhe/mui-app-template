@@ -8,5 +8,3 @@ export const languages = [
     label: '中文',
   },
 ];
-
-export const languageCodes = languages.map((item) => item.value);
