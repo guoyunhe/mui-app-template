@@ -1,5 +1,5 @@
 import { Container, List, Pagination, Typography } from '@mui/material';
-import axios from 'axios';
+import xior from 'xior';
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSearchParams } from 'react-router-dom';
@@ -14,7 +14,7 @@ export default function AdminUserListPage() {
   const [users, setUsers] = useState<User[]>([]);
 
   const reload = () => {
-    axios
+    xior
       .get<PaginatedResult<User>>('/admin/users', {
         params: {
           page: searchParams.get('page'),

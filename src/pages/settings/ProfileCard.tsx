@@ -2,7 +2,7 @@ import { useAuth } from '@guoyunhe/react-auth';
 import { Save as SaveIcon } from '@mui/icons-material';
 import { LoadingButton } from '@mui/lab';
 import { Alert, Box, Card, CardContent, CardHeader, TextField } from '@mui/material';
-import axios from 'axios';
+import xior from 'xior';
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import User from '~/types/models/User';
@@ -24,7 +24,7 @@ export default function ProfileCard() {
 
   const submit = () => {
     setLoading(true);
-    axios
+    xior
       .put('/user', { name, username, email })
       .then((res) => {
         setUser(res.data);

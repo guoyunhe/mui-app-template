@@ -2,7 +2,7 @@ import { useAuth } from '@guoyunhe/react-auth';
 import { Delete as DeleteIcon, Upload as UploadIcon } from '@mui/icons-material';
 import { LoadingButton } from '@mui/lab';
 import { Avatar, Card, CardContent, CardHeader, Stack } from '@mui/material';
-import axios from 'axios';
+import xior from 'xior';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import RequestStatus from '~/types/enums/RequestStatus';
@@ -43,11 +43,11 @@ export default function AvatarUploader() {
                   data.append('height', '512');
                   data.append('fit', 'cover');
                   setUploadStatus(RequestStatus.Progressing);
-                  axios
+                  xior
                     .post<Image>('/images', data)
                     .then((res) => {
                       const image = res.data;
-                      return axios.put<User>('/user', { avatarId: image.id });
+                      return xior.put<User>('/user', { avatarId: image.id });
                     })
                     .then((res) => {
                       setUser(res.data);
@@ -68,7 +68,7 @@ export default function AvatarUploader() {
             loadingPosition="start"
             onClick={() => {
               setDeleteStatus(RequestStatus.Progressing);
-              axios
+              xior
                 .put<User>('/user', { avatarId: null })
                 .then((res) => {
                   setUser(res.data);

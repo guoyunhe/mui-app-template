@@ -1,7 +1,7 @@
 import { Delete as DeleteIcon } from '@mui/icons-material';
 import { LoadingButton } from '@mui/lab';
 import { Avatar, ListItem, ListItemAvatar, ListItemText } from '@mui/material';
-import axios from 'axios';
+import xior from 'xior';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import User from '~/types/models/User';
@@ -25,7 +25,7 @@ export default function UserCard({ user, onDelete }: UserCardProps) {
           loading={deleting}
           onClick={() => {
             setDeleting(true);
-            axios
+            xior
               .delete('/users/' + user.id)
               .then(() => {
                 onDelete();

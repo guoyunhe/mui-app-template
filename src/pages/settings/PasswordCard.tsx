@@ -1,7 +1,7 @@
 import { Save as SaveIcon } from '@mui/icons-material';
 import { LoadingButton } from '@mui/lab';
 import { Alert, Box, Card, CardContent, CardHeader, TextField } from '@mui/material';
-import axios from 'axios';
+import xior from 'xior';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import RequestStatus from '~/types/enums/RequestStatus';
@@ -21,7 +21,7 @@ export default function PasswordCard() {
 
   const submit = () => {
     setStatus(RequestStatus.Progressing);
-    axios
+    xior
       .put('/password', { oldPassword, password, passwordConfirm })
       .then(() => {
         setStatus(RequestStatus.Succeeded);

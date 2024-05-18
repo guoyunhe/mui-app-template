@@ -1,6 +1,6 @@
 import { AuthProvider } from '@guoyunhe/react-auth';
 import { CircularProgress, CssBaseline } from '@mui/material';
-import axios from 'axios';
+import xior from 'xior';
 import { AppProvider } from 'material-app';
 import { Suspense } from 'react';
 import { FetchConfigProvider, IndexedDBStore } from 'react-fast-fetch';
@@ -13,7 +13,7 @@ import router from './router';
 import { darkTheme, lightTheme } from './themes';
 
 const store = new IndexedDBStore({ limit: 10000 });
-const fetcher = (url: string) => axios.get(url).then((res) => res.data);
+const fetcher = (url: string) => xior.get(url).then((res) => res.data);
 
 export default function App() {
   const { t } = useTranslation();
