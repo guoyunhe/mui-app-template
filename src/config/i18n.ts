@@ -1,12 +1,12 @@
 export const languages = [
   {
-    code: 'en',
-    name: 'English',
+    value: 'en',
+    label: 'English',
   },
   {
-    code: 'zh',
-    name: '中文',
+    value: 'zh',
+    label: '中文',
   },
 ];
 
-export const languageCodes = languages.map((item) => item.code);
+export const languageCodes = languages.map((item) => item.value);

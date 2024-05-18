@@ -12,7 +12,7 @@ import {
 } from '@mui/icons-material';
 import { LoadingButton } from '@mui/lab';
 import { AppBar, Avatar, Box, Button, IconButton, Stack, Toolbar, Typography } from '@mui/material';
-import { PaletteModeButton } from 'mui-palette-mode';
+import { ThemeIconButton } from 'material-app';
 import { useTranslation } from 'react-i18next';
 import { NavLink, useLocation } from 'react-router-dom';
 import LanguageMenu from '~/components/language-menu';
@@ -88,7 +88,7 @@ export default function TopNav({ onMenuButtonClick }: TopNavProps) {
           </Button>
         </Stack>
         <Box flex="1 1 auto" />
-        <PaletteModeButton />
+        <ThemeIconButton />
         {auth.status === AuthStatus.LoggedIn && auth.user ? (
           <Stack direction="row">
             <Button

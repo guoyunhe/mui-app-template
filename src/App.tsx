@@ -1,13 +1,14 @@
 import { AuthProvider } from '@guoyunhe/react-auth';
 import { CircularProgress, CssBaseline } from '@mui/material';
 import axios from 'axios';
-import { DualThemeProvider } from 'mui-palette-mode';
+import { AppProvider } from 'material-app';
 import { Suspense } from 'react';
 import { FetchConfigProvider, IndexedDBStore } from 'react-fast-fetch';
 import { HelmetProvider } from 'react-helmet-async';
 import { useTranslation } from 'react-i18next';
 import { RouterProvider } from 'react-router-dom';
 import LanguageEffects from './components/language-effects';
+import { languages } from './config/i18n';
 import router from './router';
 import { darkTheme, lightTheme } from './themes';
 
@@ -33,22 +34,13 @@ export default function App() {
             />
           }
         >
-          <DualThemeProvider
-            lightTheme={lightTheme}
-            darkTheme={darkTheme}
-            defaultPaletteMode="auto"
-            messages={{
-              auto: t('Auto'),
-              dark: t('Dark'),
-              light: t('Light'),
-            }}
-          >
+          <AppProvider lightTheme={lightTheme} darkTheme={darkTheme} languages={languages}>
             <AuthProvider>
               <CssBaseline enableColorScheme />
               <LanguageEffects />
               <RouterProvider router={router} />
             </AuthProvider>
-          </DualThemeProvider>
+          </AppProvider>
         </Suspense>
       </FetchConfigProvider>
     </HelmetProvider>

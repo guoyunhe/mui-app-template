@@ -61,8 +61,8 @@ export default function LanguageCard() {
             sx={{ mb: 2 }}
           >
             {languages.map((item) => (
-              <MenuItem key={item.code} value={item.code}>
-                {item.name}
+              <MenuItem key={item.value} value={item.value}>
+                {item.label}
               </MenuItem>
             ))}
           </TextField>

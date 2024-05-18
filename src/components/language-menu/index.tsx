@@ -13,7 +13,7 @@ export default function LanguageMenu() {
     setAnchorEl(event.currentTarget);
   };
 
-  const currentLang = languages.find((lang) => i18n.language === lang.code);
+  const currentLang = languages.find((lang) => i18n.language === lang.value);
 
   return (
     <>
@@ -26,7 +26,7 @@ export default function LanguageMenu() {
         startIcon={<TranslateIcon />}
         color="inherit"
       >
-        {currentLang?.name}
+        {currentLang?.label}
       </Button>
       <Menu
         id="lang-menu"
@@ -50,14 +50,14 @@ export default function LanguageMenu() {
       >
         {languages.map((lang) => (
           <MenuItem
-            key={lang.code}
+            key={lang.value}
             onClick={() => {
-              i18n.changeLanguage(lang.code);
+              i18n.changeLanguage(lang.value);
               setAnchorEl(null);
             }}
-            selected={lang.code === currentLang?.code}
+            selected={lang.value === currentLang?.value}
           >
-            {lang.name}
+            {lang.label}
           </MenuItem>
         ))}
       </Menu>
