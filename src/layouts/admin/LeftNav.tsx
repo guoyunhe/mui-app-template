@@ -1,4 +1,3 @@
-import { useLogout } from '@guoyunhe/react-auth';
 import {
   ArrowBack as ArrowBackIcon,
   Dashboard as DashboardIcon,
@@ -18,6 +17,7 @@ import {
 } from '@mui/material';
 import { useTranslation } from 'react-i18next';
 import { NavLink } from 'react-router-dom';
+import useLogout from '~/hooks/use-logout';
 import config from './config';
 
 export interface LeftNavProps {
@@ -63,7 +63,7 @@ export default function LeftNav({ drawerOpen, onDrawerClose }: LeftNavProps) {
           </ListItemIcon>
           <ListItemText primary={t('Admin Settings')} />
         </ListItemButton>
-        <ListItemButton onClick={logout.submit} disabled={logout.loading}>
+        <ListItemButton onClick={logout}>
           <ListItemIcon>
             <LogoutIcon />
           </ListItemIcon>

@@ -1,4 +1,4 @@
-import { AuthStatus, useAuth, useLogout } from '@guoyunhe/react-auth';
+import { AuthStatus, useAuth } from '@guoyunhe/react-auth';
 import {
   AutoAwesome as AutoAwesomeIcon,
   Dashboard as DashboardIcon,
@@ -12,6 +12,7 @@ import {
 import { Divider, Drawer, List, ListItemButton, ListItemIcon, ListItemText } from '@mui/material';
 import { useTranslation } from 'react-i18next';
 import { NavLink, useLocation } from 'react-router-dom';
+import useLogout from '~/hooks/use-logout';
 import User from '~/types/models/User';
 import { drawerWidth } from './config';
 
@@ -74,7 +75,7 @@ export default function LeftNav({ drawerOpen, onDrawerClose }: LeftNavProps) {
               </ListItemIcon>
               <ListItemText primary={t('Settings')} />
             </ListItemButton>
-            <ListItemButton onClick={logout.submit}>
+            <ListItemButton onClick={logout}>
               <ListItemIcon>
                 <LogoutIcon />
               </ListItemIcon>

@@ -1,4 +1,4 @@
-import { AuthStatus, useAuth, useLogout } from '@guoyunhe/react-auth';
+import { AuthStatus, useAuth } from '@guoyunhe/react-auth';
 import {
   AutoAwesome as AutoAwesomeIcon,
   CreditCard,
@@ -10,12 +10,12 @@ import {
   Settings as SettingsIcon,
   SupportAgent as SupportAgentIcon,
 } from '@mui/icons-material';
-import { LoadingButton } from '@mui/lab';
 import { AppBar, Avatar, Box, Button, IconButton, Stack, Toolbar, Typography } from '@mui/material';
 import { ThemeIconButton } from 'material-app';
 import { useTranslation } from 'react-i18next';
 import { NavLink, useLocation } from 'react-router-dom';
 import LanguageMenu from '~/components/language-menu';
+import useLogout from '~/hooks/use-logout';
 import User from '~/types/models/User';
 
 export interface TopNavProps {
@@ -130,18 +130,16 @@ export default function TopNav({ onMenuButtonClick }: TopNavProps) {
             >
               {t('Settings')}
             </Button>
-            <LoadingButton
+            <Button
               variant="text"
               color="inherit"
               disableElevation
               startIcon={<LogoutIcon />}
-              loading={logout.loading}
-              loadingPosition="start"
-              onClick={logout.submit}
+              onClick={logout}
               sx={{ display: { xs: 'none', sm: 'flex' } }}
             >
               {t('Logout')}
-            </LoadingButton>
+            </Button>
           </Stack>
         ) : (
           <Stack direction="row">
