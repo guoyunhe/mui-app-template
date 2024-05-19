@@ -1,4 +1,4 @@
-import { RequireAuth } from 'material-app';
+import { RequireLogin } from 'material-app';
 import { lazy } from 'react';
 import { RouteObject, createBrowserRouter } from 'react-router-dom';
 
@@ -71,9 +71,9 @@ const routes: RouteObject[] = [
   {
     path: '/app',
     element: (
-      <RequireAuth>
+      <RequireLogin>
         <AppLayout />
-      </RequireAuth>
+      </RequireLogin>
     ),
     children: [
       { index: true, element: <DashboardPage /> },
@@ -83,9 +83,9 @@ const routes: RouteObject[] = [
   {
     path: 'admin',
     element: (
-      <RequireAuth>
+      <RequireLogin>
         <AdminLayout />
-      </RequireAuth>
+      </RequireLogin>
     ),
     children: [
       {

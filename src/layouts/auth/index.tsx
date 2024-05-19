@@ -1,6 +1,6 @@
-import { RedirectAfterAuth } from '@guoyunhe/react-auth';
 import { ArrowBack } from '@mui/icons-material';
 import { AppBar, Box, Button, Paper, Tab, Tabs, Toolbar } from '@mui/material';
+import { RedirectAfterLogin } from 'material-app';
 import { useTranslation } from 'react-i18next';
 import { NavLink, Outlet, useLocation, useNavigate } from 'react-router-dom';
 import Footer from '~/components/footer';
@@ -40,7 +40,7 @@ export default function AuthLayout() {
             <Tab label={t('Login')} value="/login" />
             <Tab label={t('Register')} value="/register" />
           </Tabs>
-          <RedirectAfterAuth to="/app" />
+          <RedirectAfterLogin />
           <Outlet />
         </Paper>
       </Box>
