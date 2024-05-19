@@ -1,12 +1,10 @@
-import { AuthProvider } from '@guoyunhe/react-auth';
-import { CircularProgress, CssBaseline } from '@mui/material';
+import { CircularProgress } from '@mui/material';
 import { AppProvider } from 'material-app';
 import { Suspense } from 'react';
 import { FetchConfigProvider, IndexedDBStore } from 'react-fast-fetch';
 import { HelmetProvider } from 'react-helmet-async';
 import { RouterProvider } from 'react-router-dom';
 import xior from 'xior';
-import LanguageEffects from './components/language-effects';
 import { languages } from './config/i18n';
 import router from './router';
 import { darkTheme, lightTheme } from './themes';
@@ -40,11 +38,7 @@ export default function App() {
             loginRedirectPath="/app"
             logoutRedirectPath="/"
           >
-            <AuthProvider>
-              <CssBaseline enableColorScheme />
-              <LanguageEffects />
-              <RouterProvider router={router} />
-            </AuthProvider>
+            <RouterProvider router={router} />
           </AppProvider>
         </Suspense>
       </FetchConfigProvider>
