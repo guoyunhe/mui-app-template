@@ -23,11 +23,10 @@
     "i18next": "^23.11.4",
     "i18next-parser": "^8.13.0",
     "material-app": "^1.0.7",
-    "mui-material-compact": "^1.8.0",
+    "material-compact": "^1.8.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-fast-fetch": "^1.8.0",
-    "react-helmet-async": "^2.0.5",
     "react-i18next": "^14.1.1",
     "react-router-dom": "^6.23.1",
     "xior": "~0.4.3"

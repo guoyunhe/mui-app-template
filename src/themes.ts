@@ -1,4 +1,4 @@
-import { createCompactTheme } from 'mui-material-compact';
+import { createCompactTheme } from 'material-compact';
 
 export const lightTheme = createCompactTheme({ palette: { mode: 'light' } });
 export const darkTheme = createCompactTheme({

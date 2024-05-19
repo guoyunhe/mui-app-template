@@ -1,5 +1,4 @@
 import { Box, Button, Typography, colors } from '@mui/material';
-import { Helmet } from 'react-helmet-async';
 import { useTranslation } from 'react-i18next';
 
 export default function HomePage() {
@@ -7,11 +6,9 @@ export default function HomePage() {
 
   return (
     <Box>
-      <Helmet>
-        <title>
-          {t('Home')} - {import.meta.env.VITE_APP_NAME}
-        </title>
-      </Helmet>
+      <title>
+        {t('Home')} - {import.meta.env.VITE_APP_NAME}
+      </title>
       <Box
         component="header"
         bgcolor={colors.amber[300]}
