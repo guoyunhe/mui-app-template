@@ -1,4 +1,4 @@
-import { RequireAuth } from '@guoyunhe/react-auth';
+import { RequireAuth } from 'material-app';
 import { lazy } from 'react';
 import { RouteObject, createBrowserRouter } from 'react-router-dom';
 
