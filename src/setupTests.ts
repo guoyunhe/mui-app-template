@@ -1,2 +1,2 @@
 import '@testing-library/jest-dom';
-import './config/xior';
+import './bootstrap/xior';
