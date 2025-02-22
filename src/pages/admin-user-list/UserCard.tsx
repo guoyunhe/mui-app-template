@@ -26,7 +26,7 @@ export default function UserCard({ user, onDelete }: UserCardProps) {
           onClick={() => {
             setDeleting(true);
             xior
-              .delete('/users/' + user.id)
+              .delete(`/users/${user.id}`)
               .then(() => {
                 onDelete();
               })
