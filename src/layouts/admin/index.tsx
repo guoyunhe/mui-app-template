@@ -1,11 +1,10 @@
 import { Box } from '@mui/material';
-import { useState } from 'react';
-import { Outlet } from 'react-router-dom';
+import { ReactNode, useState } from 'react';
 import LeftNav from './LeftNav';
 import TopNav from './TopNav';
 import config from './config';
 
-export default function AdminLayout() {
+export default function AdminLayout({ children }: { children: ReactNode }) {
   const [drawerOpen, setDrawerOpen] = useState(false);
 
   return (
@@ -13,7 +12,7 @@ export default function AdminLayout() {
       <LeftNav drawerOpen={drawerOpen} onDrawerClose={() => setDrawerOpen(false)} />
       <Box sx={{ marginLeft: { sm: config.drawerWidth } }}>
         <TopNav onMenuButtonClick={() => setDrawerOpen((prev) => !prev)} />
-        <Outlet />
+        {children}
       </Box>
     </div>
   );

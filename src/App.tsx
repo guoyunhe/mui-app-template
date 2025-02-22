@@ -1,12 +1,36 @@
 import { CircularProgress } from '@mui/material';
-import { AppProvider } from 'material-app';
-import { Suspense } from 'react';
+import { AppProvider, RequireLogin } from 'material-app';
+import { lazy, Suspense } from 'react';
 import { FetchConfigProvider, IndexedDBStore } from 'react-fast-fetch';
-import { RouterProvider } from 'react-router-dom';
+import { Route, Switch } from 'wouter';
 import xior from 'xior';
 import { languages } from './config/i18n';
-import router from './router';
+import NotFoundPage from './pages/not-found';
 import { darkTheme, lightTheme } from './themes';
+
+// layouts
+const AppLayout = lazy(() => import('./layouts/app'));
+const AdminLayout = lazy(() => import('./layouts/admin'));
+const LandingLayout = lazy(() => import('./layouts/landing'));
+
+// landing pages
+const HomePage = lazy(() => import('./pages/home'));
+const AboutPage = lazy(() => import('./pages/about'));
+const PrivacyPage = lazy(() => import('./pages/privacy'));
+const TermsPage = lazy(() => import('./pages/terms'));
+
+// auth pages
+const LoginPage = lazy(() => import('./pages/login'));
+const RegisterPage = lazy(() => import('./pages/register'));
+
+// app pages
+const DashboardPage = lazy(() => import('./pages/dashboard'));
+const SettingsPage = lazy(() => import('./pages/settings'));
+
+// admin pages
+const AdminDashboardPage = lazy(() => import('./pages/admin-dashboard'));
+const AdminUserListPage = lazy(() => import('./pages/admin-user-list'));
+const AdminSettingsPage = lazy(() => import('./pages/admin-settings'));
 
 const store = new IndexedDBStore({ limit: 10000 });
 const fetcher = (url: string) => xior.get(url).then((res) => res.data);
@@ -36,7 +60,44 @@ export default function App() {
           loginRedirectPath="/app"
           logoutRedirectPath="/"
         >
-          <RouterProvider router={router} />
+          <Switch>
+            <Route path="/app" nest>
+              <RequireLogin>
+                <AppLayout>
+                  <Switch>
+                    <Route path="/" component={DashboardPage} />
+                    <Route path="/settings" component={SettingsPage} />
+                    <Route component={NotFoundPage} />
+                  </Switch>
+                </AppLayout>
+              </RequireLogin>
+            </Route>
+            <Route path="/admin" nest>
+              <RequireLogin>
+                <AdminLayout>
+                  <Switch>
+                    <Route path="/" component={AdminDashboardPage} />
+                    <Route path="/users" component={AdminUserListPage} />
+                    <Route path="/settings" component={AdminSettingsPage} />
+                    <Route component={NotFoundPage} />
+                  </Switch>
+                </AdminLayout>
+              </RequireLogin>
+            </Route>
+            <Route>
+              <LandingLayout>
+                <Switch>
+                  <Route path="/" component={HomePage} />
+                  <Route path="/register" component={RegisterPage} />
+                  <Route path="/login" component={LoginPage} />
+                  <Route path="/about" component={AboutPage} />
+                  <Route path="/privacy" component={PrivacyPage} />
+                  <Route path="/terms" component={TermsPage} />
+                  <Route component={NotFoundPage} />
+                </Switch>
+              </LandingLayout>
+            </Route>
+          </Switch>
         </AppProvider>
       </Suspense>
     </FetchConfigProvider>

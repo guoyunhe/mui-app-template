@@ -1,34 +1,35 @@
 import { Container, List, Pagination, Typography } from '@mui/material';
-import xior from 'xior';
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useSearchParams } from 'react-router-dom';
+import { useSearchParams } from 'wouter';
+import xior from 'xior';
 import PaginatedResult from '~/types/PaginatedResult';
 import User from '~/types/models/User';
 import UserCard from './UserCard';
 
 export default function AdminUserListPage() {
   const { t } = useTranslation('admin');
-  const [searchParams, setSearchParams] = useSearchParams({ page: '1', perPage: '10' });
+  const [searchParams, setSearchParams] = useSearchParams();
+  const page = searchParams.get('page') || '1';
   const [total, setTotal] = useState(0);
   const [users, setUsers] = useState<User[]>([]);
 
-  const reload = () => {
+  const reload = useCallback(() => {
     xior
       .get<PaginatedResult<User>>('/admin/users', {
         params: {
-          page: searchParams.get('page'),
+          page,
         },
       })
       .then((res) => {
         setTotal(res.data.meta.total);
         setUsers(res.data.data);
       });
-  };
+  }, [page]);
 
   useEffect(() => {
     reload();
-  }, [searchParams]);
+  }, [reload]);
 
   return (
     <Container maxWidth="sm">
@@ -49,11 +50,10 @@ export default function AdminUserListPage() {
       <Pagination
         page={Number(searchParams.get('page'))}
         count={Math.ceil(total / 10)}
-        onChange={(e, page) => {
+        onChange={(e, p) => {
           setSearchParams((prev) => {
-            const next = new URLSearchParams(prev);
-            next.set('page', String(page));
-            return next;
+            prev.set('page', String(p));
+            return prev;
           });
         }}
       />

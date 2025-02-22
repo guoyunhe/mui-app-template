@@ -13,7 +13,7 @@ import {
 import { AppBar, Avatar, Box, Button, IconButton, Stack, Toolbar, Typography } from '@mui/material';
 import { ThemeIconButton } from 'material-app';
 import { useTranslation } from 'react-i18next';
-import { NavLink, useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'wouter';
 import LanguageMenu from '~/components/language-menu';
 import useLogout from '~/hooks/use-logout';
 import User from '~/types/models/User';
@@ -24,7 +24,7 @@ export interface TopNavProps {
 
 export default function TopNav({ onMenuButtonClick }: TopNavProps) {
   const { t } = useTranslation();
-  const location = useLocation();
+  const [location] = useLocation();
   const auth = useAuth<User>();
   const logout = useLogout();
 
@@ -40,7 +40,7 @@ export default function TopNav({ onMenuButtonClick }: TopNavProps) {
           <MenuIcon />
         </IconButton>
         <Box
-          component={NavLink}
+          component={Link}
           to="/"
           style={{ display: 'flex', color: 'inherit', textDecoration: 'none' }}
         >
@@ -57,31 +57,31 @@ export default function TopNav({ onMenuButtonClick }: TopNavProps) {
         </Box>
         <Stack direction="row" ml={3} sx={{ display: { xs: 'none', sm: 'flex' } }}>
           <Button
-            variant={location.pathname === '/features' ? 'contained' : 'text'}
+            variant={location === '/features' ? 'contained' : 'text'}
             color="inherit"
             disableElevation
-            component={NavLink}
+            component={Link}
             to="/features"
             startIcon={<AutoAwesomeIcon />}
           >
             {t('Features')}
           </Button>
           <Button
-            variant={location.pathname === '/pricing' ? 'contained' : 'text'}
+            variant={location === '/pricing' ? 'contained' : 'text'}
             color="inherit"
             disableElevation
             startIcon={<CreditCard />}
-            component={NavLink}
+            component={Link}
             to="/pricing"
           >
             {t('Pricing')}
           </Button>
           <Button
-            variant={location.pathname === '/support' ? 'contained' : 'text'}
+            variant={location === '/support' ? 'contained' : 'text'}
             color="inherit"
             disableElevation
             startIcon={<SupportAgentIcon />}
-            component={NavLink}
+            component={Link}
             to="/support"
           >
             {t('Support')}
@@ -102,7 +102,7 @@ export default function TopNav({ onMenuButtonClick }: TopNavProps) {
                   sx={{ width: 24, height: 24 }}
                 />
               }
-              component={NavLink}
+              component={Link}
               to="/app/settings"
               sx={{ display: { xs: 'none', sm: 'flex' } }}
             >
@@ -113,7 +113,7 @@ export default function TopNav({ onMenuButtonClick }: TopNavProps) {
               color="inherit"
               disableElevation
               startIcon={<DashboardIcon />}
-              component={NavLink}
+              component={Link}
               to="/app"
               sx={{ display: { xs: 'none', sm: 'flex' } }}
             >
@@ -124,7 +124,7 @@ export default function TopNav({ onMenuButtonClick }: TopNavProps) {
               color="inherit"
               disableElevation
               startIcon={<SettingsIcon />}
-              component={NavLink}
+              component={Link}
               to="/app"
               sx={{ display: { xs: 'none', sm: 'flex' } }}
             >
@@ -149,7 +149,7 @@ export default function TopNav({ onMenuButtonClick }: TopNavProps) {
               color="inherit"
               disableElevation
               startIcon={<LoginIcon />}
-              component={NavLink}
+              component={Link}
               to="/login"
               sx={{ display: { xs: 'none', sm: 'flex' } }}
             >
@@ -160,7 +160,7 @@ export default function TopNav({ onMenuButtonClick }: TopNavProps) {
               color="inherit"
               disableElevation
               startIcon={<PersonAddIcon />}
-              component={NavLink}
+              component={Link}
               to="/register"
               sx={{ display: { xs: 'none', sm: 'flex' } }}
             >

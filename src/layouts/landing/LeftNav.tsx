@@ -11,7 +11,7 @@ import {
 } from '@mui/icons-material';
 import { Divider, Drawer, List, ListItemButton, ListItemIcon, ListItemText } from '@mui/material';
 import { useTranslation } from 'react-i18next';
-import { NavLink, useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'wouter';
 import useLogout from '~/hooks/use-logout';
 import User from '~/types/models/User';
 import { drawerWidth } from './config';
@@ -23,38 +23,26 @@ export interface LeftNavProps {
 
 export default function LeftNav({ drawerOpen, onDrawerClose }: LeftNavProps) {
   const { t } = useTranslation();
-  const location = useLocation();
+  const [location] = useLocation();
   const auth = useAuth<User>();
   const logout = useLogout();
 
   return (
     <Drawer open={drawerOpen} onClose={onDrawerClose} sx={{ width: drawerWidth }}>
       <List sx={{ width: drawerWidth }} onClick={onDrawerClose}>
-        <ListItemButton
-          selected={location.pathname === '/features'}
-          component={NavLink}
-          to="/features"
-        >
+        <ListItemButton selected={location === '/features'} component={Link} to="/features">
           <ListItemIcon>
             <AutoAwesomeIcon />
           </ListItemIcon>
           <ListItemText primary={t('Features')} />
         </ListItemButton>
-        <ListItemButton
-          selected={location.pathname === '/pricing'}
-          component={NavLink}
-          to="/pricing"
-        >
+        <ListItemButton selected={location === '/pricing'} component={Link} to="/pricing">
           <ListItemIcon>
             <SellIcon />
           </ListItemIcon>
           <ListItemText primary={t('Pricing')} />
         </ListItemButton>
-        <ListItemButton
-          selected={location.pathname === '/support'}
-          component={NavLink}
-          to="/support"
-        >
+        <ListItemButton selected={location === '/support'} component={Link} to="/support">
           <ListItemIcon>
             <SupportAgentIcon />
           </ListItemIcon>
@@ -63,13 +51,13 @@ export default function LeftNav({ drawerOpen, onDrawerClose }: LeftNavProps) {
         <Divider />
         {auth.status === AuthStatus.LoggedIn && auth.user ? (
           <>
-            <ListItemButton component={NavLink} to="/app">
+            <ListItemButton component={Link} to="/app">
               <ListItemIcon>
                 <DashboardIcon />
               </ListItemIcon>
               <ListItemText primary={t('Dashboard')} />
             </ListItemButton>
-            <ListItemButton component={NavLink} to="/app/settings">
+            <ListItemButton component={Link} to="/app/settings">
               <ListItemIcon>
                 <SettingsIcon />
               </ListItemIcon>
@@ -84,13 +72,13 @@ export default function LeftNav({ drawerOpen, onDrawerClose }: LeftNavProps) {
           </>
         ) : (
           <>
-            <ListItemButton component={NavLink} to="/login">
+            <ListItemButton component={Link} to="/login">
               <ListItemIcon>
                 <LoginIcon />
               </ListItemIcon>
               <ListItemText primary={t('Login')} />
             </ListItemButton>
-            <ListItemButton component={NavLink} to="/register">
+            <ListItemButton component={Link} to="/register">
               <ListItemIcon>
                 <PersonAddIcon />
               </ListItemIcon>

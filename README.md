@@ -23,7 +23,7 @@ npm run build
 - [vite](https://vitejs.dev/) - the build system
 - [typescript](https://typescriptlang.org/) - the programming language
 - [react](https://reactjs.org/) - the user interface framework
-- [react-router](https://reactrouter.com/) - the routing library for single-page-application
+- [wouter](https://github.com/molefrog/wouter/) - the routing library for single-page-application
 - [mui](https://mui.com/) - the design system and component library
 - [i18next](https://react.i18next.com/) - the internationalization solution
 - [xior](https://xior-http.com/) - the http client to send API requests

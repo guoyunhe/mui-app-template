@@ -14,7 +14,7 @@ import {
   useMediaQuery,
 } from '@mui/material';
 import { useTranslation } from 'react-i18next';
-import { NavLink } from 'react-router-dom';
+import { Link } from 'wouter';
 import useLogout from '~/hooks/use-logout';
 import config from './config';
 
@@ -36,14 +36,14 @@ export default function LeftNav({ drawerOpen, onDrawerClose }: LeftNavProps) {
       sx={{ width: config.drawerWidth }}
     >
       <List sx={{ width: config.drawerWidth }} onClick={onDrawerClose}>
-        <ListItemButton component={NavLink} to="/app">
+        <ListItemButton component={Link} to="/app">
           <ListItemIcon>
             <DashboardIcon />
           </ListItemIcon>
           <ListItemText primary={t('Dashboard')} />
         </ListItemButton>
         <Divider />
-        <ListItemButton component={NavLink} to="/app/settings">
+        <ListItemButton component={Link} to="/app/settings">
           <ListItemIcon>
             <SettingsIcon />
           </ListItemIcon>
