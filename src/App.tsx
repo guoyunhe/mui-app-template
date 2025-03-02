@@ -1,5 +1,6 @@
+import { AuthProvider, RequireAuth } from '@guoyunhe/react-auth';
 import { CircularProgress } from '@mui/material';
-import { AppProvider, RequireLogin } from 'material-app';
+import { AppProvider } from 'material-app';
 import { lazy, Suspense } from 'react';
 import { FetchConfigProvider, IndexedDBStore } from 'react-fast-fetch';
 import { Route, Switch } from 'wouter';
@@ -52,53 +53,55 @@ export default function App() {
           />
         }
       >
-        <AppProvider
-          lightTheme={lightTheme}
-          darkTheme={darkTheme}
-          languages={languages}
-          loginPath="/login"
-          loginRedirectPath="/app"
-          logoutRedirectPath="/"
-        >
-          <Switch>
-            <Route path="/app" nest>
-              <RequireLogin>
-                <AppLayout>
+        <AuthProvider>
+          <AppProvider
+            lightTheme={lightTheme}
+            darkTheme={darkTheme}
+            languages={languages}
+            loginPath="/login"
+            loginRedirectPath="/app"
+            logoutRedirectPath="/"
+          >
+            <Switch>
+              <Route path="/app" nest>
+                <RequireAuth>
+                  <AppLayout>
+                    <Switch>
+                      <Route path="/" component={DashboardPage} />
+                      <Route path="/settings" component={SettingsPage} />
+                      <Route component={NotFoundPage} />
+                    </Switch>
+                  </AppLayout>
+                </RequireAuth>
+              </Route>
+              <Route path="/admin" nest>
+                <RequireAuth>
+                  <AdminLayout>
+                    <Switch>
+                      <Route path="/" component={AdminDashboardPage} />
+                      <Route path="/users" component={AdminUserListPage} />
+                      <Route path="/settings" component={AdminSettingsPage} />
+                      <Route component={NotFoundPage} />
+                    </Switch>
+                  </AdminLayout>
+                </RequireAuth>
+              </Route>
+              <Route>
+                <LandingLayout>
                   <Switch>
-                    <Route path="/" component={DashboardPage} />
-                    <Route path="/settings" component={SettingsPage} />
+                    <Route path="/" component={HomePage} />
+                    <Route path="/register" component={RegisterPage} />
+                    <Route path="/login" component={LoginPage} />
+                    <Route path="/about" component={AboutPage} />
+                    <Route path="/privacy" component={PrivacyPage} />
+                    <Route path="/terms" component={TermsPage} />
                     <Route component={NotFoundPage} />
                   </Switch>
-                </AppLayout>
-              </RequireLogin>
-            </Route>
-            <Route path="/admin" nest>
-              <RequireLogin>
-                <AdminLayout>
-                  <Switch>
-                    <Route path="/" component={AdminDashboardPage} />
-                    <Route path="/users" component={AdminUserListPage} />
-                    <Route path="/settings" component={AdminSettingsPage} />
-                    <Route component={NotFoundPage} />
-                  </Switch>
-                </AdminLayout>
-              </RequireLogin>
-            </Route>
-            <Route>
-              <LandingLayout>
-                <Switch>
-                  <Route path="/" component={HomePage} />
-                  <Route path="/register" component={RegisterPage} />
-                  <Route path="/login" component={LoginPage} />
-                  <Route path="/about" component={AboutPage} />
-                  <Route path="/privacy" component={PrivacyPage} />
-                  <Route path="/terms" component={TermsPage} />
-                  <Route component={NotFoundPage} />
-                </Switch>
-              </LandingLayout>
-            </Route>
-          </Switch>
-        </AppProvider>
+                </LandingLayout>
+              </Route>
+            </Switch>
+          </AppProvider>
+        </AuthProvider>
       </Suspense>
     </FetchConfigProvider>
   );
