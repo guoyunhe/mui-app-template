@@ -1,13 +1,13 @@
 import { AuthProvider, RequireAuth } from '@guoyunhe/react-auth';
 import { CircularProgress } from '@mui/material';
-import { AppProvider } from 'material-app';
+import { MaterialApp } from 'material-app';
 import { lazy, Suspense } from 'react';
 import { FetchConfigProvider, IndexedDBStore } from 'react-fast-fetch';
 import { Route, Switch } from 'wouter';
 import xior from 'xior';
 import { languages } from './config/i18n';
+import { themes } from './config/theme';
 import NotFoundPage from './pages/not-found';
-import { darkTheme, lightTheme } from './themes';
 
 // layouts
 const AppLayout = lazy(() => import('./layouts/app'));
@@ -54,14 +54,7 @@ export default function App() {
         }
       >
         <AuthProvider>
-          <AppProvider
-            lightTheme={lightTheme}
-            darkTheme={darkTheme}
-            languages={languages}
-            loginPath="/login"
-            loginRedirectPath="/app"
-            logoutRedirectPath="/"
-          >
+          <MaterialApp themes={themes} languages={languages}>
             <Switch>
               <Route path="/app" nest>
                 <RequireAuth>
@@ -100,7 +93,7 @@ export default function App() {
                 </LandingLayout>
               </Route>
             </Switch>
-          </AppProvider>
+          </MaterialApp>
         </AuthProvider>
       </Suspense>
     </FetchConfigProvider>
