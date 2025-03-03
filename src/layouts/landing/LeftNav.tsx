@@ -1,4 +1,4 @@
-import { AuthStatus, useAuth } from '@guoyunhe/react-auth';
+import { AuthStatus, useAuth, useLogout } from '@guoyunhe/react-auth';
 import {
   AutoAwesome as AutoAwesomeIcon,
   Dashboard as DashboardIcon,
@@ -12,7 +12,6 @@ import {
 import { Divider, Drawer, List, ListItemButton, ListItemIcon, ListItemText } from '@mui/material';
 import { useTranslation } from 'react-i18next';
 import { Link, useLocation } from 'wouter';
-import useLogout from '~/hooks/use-logout';
 import User from '~/types/models/User';
 import { drawerWidth } from './config';
 

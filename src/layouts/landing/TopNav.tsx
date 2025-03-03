@@ -1,4 +1,4 @@
-import { AuthStatus, useAuth } from '@guoyunhe/react-auth';
+import { AuthStatus, useAuth, useLogout } from '@guoyunhe/react-auth';
 import {
   AutoAwesome as AutoAwesomeIcon,
   CreditCard,
@@ -11,11 +11,10 @@ import {
   SupportAgent as SupportAgentIcon,
 } from '@mui/icons-material';
 import { AppBar, Avatar, Box, Button, IconButton, Stack, Toolbar, Typography } from '@mui/material';
-import { ThemeIconButton } from 'material-app';
+import { ThemeToggle } from 'material-app';
 import { useTranslation } from 'react-i18next';
 import { Link, useLocation } from 'wouter';
 import LanguageMenu from '~/components/language-menu';
-import useLogout from '~/hooks/use-logout';
 import User from '~/types/models/User';
 
 export interface TopNavProps {
@@ -88,7 +87,7 @@ export default function TopNav({ onMenuButtonClick }: TopNavProps) {
           </Button>
         </Stack>
         <Box flex="1 1 auto" />
-        <ThemeIconButton />
+        <ThemeToggle />
         {auth.status === AuthStatus.LoggedIn && auth.user ? (
           <Stack direction="row">
             <Button

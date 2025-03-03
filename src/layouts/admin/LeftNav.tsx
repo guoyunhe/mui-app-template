@@ -1,3 +1,4 @@
+import { useLogout } from '@guoyunhe/react-auth';
 import {
   ArrowBack as ArrowBackIcon,
   Dashboard as DashboardIcon,
@@ -17,7 +18,6 @@ import {
 } from '@mui/material';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'wouter';
-import useLogout from '~/hooks/use-logout';
 import config from './config';
 
 export interface LeftNavProps {
