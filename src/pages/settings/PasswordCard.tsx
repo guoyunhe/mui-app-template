@@ -1,9 +1,8 @@
 import { Save as SaveIcon } from '@mui/icons-material';
-import { LoadingButton } from '@mui/lab';
-import { Alert, Box, Card, CardContent, CardHeader, TextField } from '@mui/material';
-import xior from 'xior';
+import { Alert, Box, Button, Card, CardContent, CardHeader, TextField } from '@mui/material';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import xior from 'xior';
 import RequestStatus from '~/types/enums/RequestStatus';
 import getFieldError from '~/utils/getFieldError';
 
@@ -83,14 +82,14 @@ export default function PasswordCard() {
             helperText={passwordConfirmError}
             sx={{ mb: 2 }}
           />
-          <LoadingButton
+          <Button
             variant="outlined"
             loading={status === RequestStatus.Progressing}
             onClick={submit}
             startIcon={<SaveIcon />}
           >
             {t('Save')}
-          </LoadingButton>
+          </Button>
         </Box>
       </CardContent>
     </Card>

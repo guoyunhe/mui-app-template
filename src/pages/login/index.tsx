@@ -1,6 +1,5 @@
 import { useLogin } from '@guoyunhe/react-auth';
-import { LoadingButton } from '@mui/lab';
-import { Alert, Stack, TextField } from '@mui/material';
+import { Alert, Button, Stack, TextField } from '@mui/material';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
@@ -31,9 +30,9 @@ export default function LoginPage() {
           setPassword(e.target.value);
         }}
       />
-      <LoadingButton variant="contained" loading={loading} onClick={submit}>
+      <Button variant="contained" loading={loading} onClick={submit}>
         {t('Login')}
-      </LoadingButton>
+      </Button>
     </Stack>
   );
 }

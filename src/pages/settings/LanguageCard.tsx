@@ -1,7 +1,15 @@
 import { useAuth } from '@guoyunhe/react-auth';
 import { Save as SaveIcon } from '@mui/icons-material';
-import { LoadingButton } from '@mui/lab';
-import { Alert, Box, Card, CardContent, CardHeader, MenuItem, TextField } from '@mui/material';
+import {
+  Alert,
+  Box,
+  Button,
+  Card,
+  CardContent,
+  CardHeader,
+  MenuItem,
+  TextField,
+} from '@mui/material';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import xior from 'xior';
@@ -66,14 +74,14 @@ export default function LanguageCard() {
               </MenuItem>
             ))}
           </TextField>
-          <LoadingButton
+          <Button
             variant="outlined"
             loading={status === RequestStatus.Progressing}
             onClick={submit}
             startIcon={<SaveIcon />}
           >
             {t('Save')}
-          </LoadingButton>
+          </Button>
         </Box>
       </CardContent>
     </Card>

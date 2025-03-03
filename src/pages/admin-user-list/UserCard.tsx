@@ -1,9 +1,8 @@
 import { Delete as DeleteIcon } from '@mui/icons-material';
-import { LoadingButton } from '@mui/lab';
-import { Avatar, ListItem, ListItemAvatar, ListItemText } from '@mui/material';
-import xior from 'xior';
+import { Avatar, Button, ListItem, ListItemAvatar, ListItemText } from '@mui/material';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import xior from 'xior';
 import User from '~/types/models/User';
 
 export interface UserCardProps {
@@ -19,7 +18,7 @@ export default function UserCard({ user, onDelete }: UserCardProps) {
     <ListItem
       divider
       secondaryAction={
-        <LoadingButton
+        <Button
           startIcon={<DeleteIcon />}
           color="error"
           loading={deleting}
@@ -36,7 +35,7 @@ export default function UserCard({ user, onDelete }: UserCardProps) {
           }}
         >
           {t('Delete')}
-        </LoadingButton>
+        </Button>
       }
     >
       <ListItemAvatar>

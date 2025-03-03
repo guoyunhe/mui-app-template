@@ -1,10 +1,9 @@
 import { useAuth } from '@guoyunhe/react-auth';
 import { Delete as DeleteIcon, Upload as UploadIcon } from '@mui/icons-material';
-import { LoadingButton } from '@mui/lab';
-import { Avatar, Card, CardContent, CardHeader, Stack } from '@mui/material';
-import xior from 'xior';
+import { Avatar, Button, Card, CardContent, CardHeader, Stack } from '@mui/material';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import xior from 'xior';
 import RequestStatus from '~/types/enums/RequestStatus';
 import Image from '~/types/models/Image';
 import User from '~/types/models/User';
@@ -22,7 +21,7 @@ export default function AvatarUploader() {
       <CardContent sx={{ display: 'flex', alignItems: 'center' }}>
         <Avatar src={user?.avatar?.url} sx={{ width: avatarSize, height: avatarSize, mr: 2 }} />
         <Stack spacing={2}>
-          <LoadingButton
+          <Button
             variant="outlined"
             component="label"
             startIcon={<UploadIcon />}
@@ -59,8 +58,8 @@ export default function AvatarUploader() {
                 }
               }}
             />
-          </LoadingButton>
-          <LoadingButton
+          </Button>
+          <Button
             variant="outlined"
             color="error"
             startIcon={<DeleteIcon />}
@@ -80,7 +79,7 @@ export default function AvatarUploader() {
             }}
           >
             {t('Remove')}
-          </LoadingButton>
+          </Button>
         </Stack>
       </CardContent>
     </Card>

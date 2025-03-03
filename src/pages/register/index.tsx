@@ -1,6 +1,5 @@
 import { useRegister } from '@guoyunhe/react-auth';
-import { LoadingButton } from '@mui/lab';
-import { Alert, Stack, TextField } from '@mui/material';
+import { Alert, Button, Stack, TextField } from '@mui/material';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import getFieldError from '~/utils/getFieldError';
@@ -84,9 +83,9 @@ export default function RegisterPage() {
         error={!!passwordConfirmError}
         helperText={passwordConfirmError}
       />
-      <LoadingButton variant="contained" loading={loading} onClick={submit}>
+      <Button variant="contained" loading={loading} onClick={submit}>
         {t('Register')}
-      </LoadingButton>
+      </Button>
     </Stack>
   );
 }
