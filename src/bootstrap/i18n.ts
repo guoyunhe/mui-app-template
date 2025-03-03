@@ -2,17 +2,7 @@ import i18next from 'i18next';
 import LanguageDetector from 'i18next-browser-languagedetector';
 import FetchBackend from 'i18next-fetch-backend';
 import { initReactI18next } from 'react-i18next';
-
-export const languages = [
-  {
-    value: 'en',
-    label: 'English',
-  },
-  {
-    value: 'zh',
-    label: '中文',
-  },
-];
+import { languages } from '~/config/i18n';
 
 i18next
   .use(FetchBackend)

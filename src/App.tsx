@@ -5,7 +5,6 @@ import { lazy, Suspense } from 'react';
 import { FetchConfigProvider, IndexedDBStore } from 'react-fast-fetch';
 import { Route, Switch } from 'wouter';
 import xior from 'xior';
-import { languages } from './config/i18n';
 import { themes } from './config/theme';
 import NotFoundPage from './pages/not-found';
 
@@ -53,8 +52,8 @@ export default function App() {
           />
         }
       >
-        <AuthProvider>
-          <MaterialApp themes={themes} languages={languages}>
+        <MaterialApp themes={themes}>
+          <AuthProvider>
             <Switch>
               <Route path="/app" nest>
                 <RequireAuth>
@@ -93,8 +92,8 @@ export default function App() {
                 </LandingLayout>
               </Route>
             </Switch>
-          </MaterialApp>
-        </AuthProvider>
+          </AuthProvider>
+        </MaterialApp>
       </Suspense>
     </FetchConfigProvider>
   );
