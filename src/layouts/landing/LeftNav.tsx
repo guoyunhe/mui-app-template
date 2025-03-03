@@ -1,4 +1,4 @@
-import { AuthStatus, useAuth, useLogout } from '@guoyunhe/react-auth';
+import { AuthStatus, useAuthStatus, useAuthUser, useLogout } from '@guoyunhe/react-auth';
 import {
   AutoAwesome as AutoAwesomeIcon,
   Dashboard as DashboardIcon,
@@ -12,7 +12,6 @@ import {
 import { Divider, Drawer, List, ListItemButton, ListItemIcon, ListItemText } from '@mui/material';
 import { useTranslation } from 'react-i18next';
 import { Link, useLocation } from 'wouter';
-import User from '~/types/models/User';
 import { drawerWidth } from './config';
 
 export interface LeftNavProps {
@@ -23,7 +22,8 @@ export interface LeftNavProps {
 export default function LeftNav({ drawerOpen, onDrawerClose }: LeftNavProps) {
   const { t } = useTranslation();
   const [location] = useLocation();
-  const auth = useAuth<User>();
+  const [status] = useAuthStatus();
+  const [user] = useAuthUser();
   const logout = useLogout();
 
   return (
@@ -48,7 +48,7 @@ export default function LeftNav({ drawerOpen, onDrawerClose }: LeftNavProps) {
           <ListItemText primary={t('Support')} />
         </ListItemButton>
         <Divider />
-        {auth.status === AuthStatus.LoggedIn && auth.user ? (
+        {status === AuthStatus.LoggedIn && user ? (
           <>
             <ListItemButton component={Link} to="/app">
               <ListItemIcon>
@@ -62,7 +62,7 @@ export default function LeftNav({ drawerOpen, onDrawerClose }: LeftNavProps) {
               </ListItemIcon>
               <ListItemText primary={t('Settings')} />
             </ListItemButton>
-            <ListItemButton onClick={logout}>
+            <ListItemButton onClick={logout.submit}>
               <ListItemIcon>
                 <LogoutIcon />
               </ListItemIcon>

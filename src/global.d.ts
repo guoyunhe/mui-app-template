@@ -1,7 +1,11 @@
+import User from './types/models/User';
+
 declare global {
   interface Window {
     SOME_GLOBAL_VARIABLE: string;
   }
 }
 
-export {}; // must have this empty export to take effect
+declare module '@guoyunhe/react-auth' {
+  interface AuthUser extends User {}
+}

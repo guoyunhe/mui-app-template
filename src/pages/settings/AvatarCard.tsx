@@ -1,4 +1,4 @@
-import { useAuth } from '@guoyunhe/react-auth';
+import { useAuthUser } from '@guoyunhe/react-auth';
 import { Delete as DeleteIcon, Upload as UploadIcon } from '@mui/icons-material';
 import { Avatar, Button, Card, CardContent, CardHeader, Stack } from '@mui/material';
 import { useState } from 'react';
@@ -11,7 +11,7 @@ import User from '~/types/models/User';
 const avatarSize = 128;
 
 export default function AvatarUploader() {
-  const { user, setUser } = useAuth<User>();
+  const [user, setUser] = useAuthUser();
   const { t } = useTranslation();
   const [uploadStatus, setUploadStatus] = useState(RequestStatus.Idle);
   const [deleteStatus, setDeleteStatus] = useState(RequestStatus.Idle);

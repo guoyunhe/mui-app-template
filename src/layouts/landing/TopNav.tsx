@@ -1,4 +1,4 @@
-import { AuthStatus, useAuth, useLogout } from '@guoyunhe/react-auth';
+import { AuthStatus, useAuthStatus, useAuthUser, useLogout } from '@guoyunhe/react-auth';
 import {
   AutoAwesome as AutoAwesomeIcon,
   CreditCard,
@@ -15,7 +15,6 @@ import { ThemeToggle } from 'material-app';
 import { useTranslation } from 'react-i18next';
 import { Link, useLocation } from 'wouter';
 import LanguageMenu from '~/components/language-menu';
-import User from '~/types/models/User';
 
 export interface TopNavProps {
   onMenuButtonClick: () => void;
@@ -24,7 +23,8 @@ export interface TopNavProps {
 export default function TopNav({ onMenuButtonClick }: TopNavProps) {
   const { t } = useTranslation();
   const [location] = useLocation();
-  const auth = useAuth<User>();
+  const [status] = useAuthStatus();
+  const [user] = useAuthUser();
   const logout = useLogout();
 
   return (
@@ -88,24 +88,20 @@ export default function TopNav({ onMenuButtonClick }: TopNavProps) {
         </Stack>
         <Box flex="1 1 auto" />
         <ThemeToggle />
-        {auth.status === AuthStatus.LoggedIn && auth.user ? (
+        {status === AuthStatus.LoggedIn && user ? (
           <Stack direction="row">
             <Button
               variant="text"
               color="inherit"
               disableElevation
               startIcon={
-                <Avatar
-                  src={auth.user.avatar?.url}
-                  alt={auth.user.name}
-                  sx={{ width: 24, height: 24 }}
-                />
+                <Avatar src={user.avatar?.url} alt={user.name} sx={{ width: 24, height: 24 }} />
               }
               component={Link}
               to="/app/settings"
               sx={{ display: { xs: 'none', sm: 'flex' } }}
             >
-              {auth.user.name}
+              {user.name}
             </Button>
             <Button
               variant="text"
@@ -134,7 +130,7 @@ export default function TopNav({ onMenuButtonClick }: TopNavProps) {
               color="inherit"
               disableElevation
               startIcon={<LogoutIcon />}
-              onClick={logout}
+              onClick={logout.submit}
               sx={{ display: { xs: 'none', sm: 'flex' } }}
             >
               {t('Logout')}
