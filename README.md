@@ -1,4 +1,4 @@
-# MUI App
+# Material App Template
 
 ## Get Started
 
