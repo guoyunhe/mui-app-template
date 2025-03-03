@@ -1,18 +1,5 @@
 {
   "private": true,
-  "homepage": "https://github.com/guoyunhe/mui-app-template#readme",
-  "bugs": {
-    "url": "https://github.com/guoyunhe/mui-app-template/issues"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/guoyunhe/mui-app-template.git"
-  },
-  "funding": "https://github.com/sponsors/guoyunhe",
-  "author": {
-    "name": "Guo Yunhe",
-    "email": "i@guoyunhe.me"
-  },
   "type": "module",
   "scripts": {
     "build": "vite build",
